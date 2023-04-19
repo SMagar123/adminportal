@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export const Dashboard = () => {
+
   const navList=['Dashboard', 'Users', 'Products', 'Settings'];
   return(
   <div className="dashboard">
@@ -18,4 +19,5 @@ export const Dashboard = () => {
     </div>
   </div>  
   );
+
 };
