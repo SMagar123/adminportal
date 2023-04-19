@@ -1,3 +1,42 @@
+@import "../abstracts/variables";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .dashboard {
-  color: red;
+  .dashboard__header {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $general-padding;
+    gap: $general-gap;
+    .search {
+      border: 1px solid black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      input {
+        outline: none;
+      }
+      i {
+        background-color: $primary-color1;
+        font-size: 20px;
+        padding: 10px;
+      }
+    }
+    .adminlogo {
+      i {
+        padding: 10px;
+        border-radius: 100%;
+        font-size: 20px;
+        color: $primary-color1;
+        &:nth-child(2) {
+          margin-left: 20px;
+        }
+      }
+    }
+  }
 }
