@@ -1,5 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import {
+  RxHamburgerMenu,
+  BiSearch,
+  BsBell,
+  RiAdminFill,
+} from "../../assets/icons/Icons";
 import Data from "../../productdata.json";
 import {
   CartesianGrid,
@@ -12,11 +18,9 @@ import {
   BarChart,
   Bar
 } from "recharts";
-
 export const Dashboard = () => {
   const navList = ["Dashboard", "Users", "Products", "Settings"];
   const productData = Data.products;
-
   return (
     <div className="dashboard">
       {/* .......side-nav list......... */}
@@ -34,6 +38,34 @@ export const Dashboard = () => {
           })}
         </ul>
       </div>
+      {/* header*/}
+       <div className="dashboard__header">
+        <div className="ham-icon">
+          <i>
+            <RxHamburgerMenu />
+          </i>
+        </div>
+        <div className="search">
+          <input
+            type="text"
+            name="username"
+            placeholder="Search user by name"
+          />
+          <i>
+            <BiSearch />
+          </i>
+        </div>
+        <div className="adminlogo">
+          <div className="badge">
+            <i>
+              <BsBell />
+            </i>
+            <span>1</span>
+          </div>
+          <i>
+            <RiAdminFill />
+          </i>
+        </div>
 
       {/* ........Charts.......... */}
       <div className="dashboard__charts">
@@ -76,6 +108,7 @@ export const Dashboard = () => {
       <div className="dashboard__table">
         
       </div>
-    </div>
-  );
+     
+      </div>
+      )
 };
