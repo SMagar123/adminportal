@@ -8,6 +8,8 @@ import {
   AiOutlineEye,
   AiOutlineEyeInvisible,
 } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineUserDelete } from "react-icons/ai";
+
 export {
   BiSearch,
   BiUserPlus,
