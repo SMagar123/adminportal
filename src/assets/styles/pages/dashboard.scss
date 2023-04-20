@@ -41,6 +41,7 @@
     position: relative;
     grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
     grid-template-areas: "linechart barchart";
+    grid-template-areas: "linechart barchart";
     // border: 1px solid black;
     padding: $general-padding;
     .dashboard__charts-linechart {
@@ -170,6 +171,35 @@
           box-shadow: 0 0 18px rgb(33, 196, 134);
           p {
             color: black;
+          }
+        }
+      }
+    }
+  }
+  .dashboard__table {
+    padding: $general-padding;
+    text-align: center;
+    table {
+      width: 100%;
+      border: 1px;
+      padding: $general-padding;
+      box-shadow: 0 0 5px $body-text-color;
+      th {
+        border: 1px solid $primary-color1;
+        font-size: $font-size;
+        background-color: $primary-color2;
+        color: $body-text-color;
+        padding: 10px 15px;
+      }
+      td {
+        border: 1px solid $search-bar-color;
+        font-size: $font-size;
+        padding: 10px 8px;
+      }
+      tbody {
+        tr {
+          &:nth-child(even) {
+            background-color: #f3ebeb;
           }
         }
       }
