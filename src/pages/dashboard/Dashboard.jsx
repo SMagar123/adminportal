@@ -17,10 +17,8 @@ import {
   YAxis,
   BarChart,
   Bar,
-  Bar,
 } from "recharts";
 export const Dashboard = () => {
-
   const productData = Data.products;
   return (
     <div className="dashboard">
@@ -95,7 +93,21 @@ export const Dashboard = () => {
             </BarChart>
           </div>
         </div>
-
+        {/*Users and product number listing */}
+        <div className="dashboard__userno">
+          <div className="numbers">
+            <h4>20</h4>
+            <p>Users</p>
+          </div>
+          <div className="numbers">
+            <h4>12</h4>
+            <p>Products</p>
+          </div>
+          <div className="numbers">
+            <h4>5</h4>
+            <p>Brands</p>
+          </div>
+        </div>
         {/* .....table......... */}
         <div className="dashboard__table"></div>
       </div>

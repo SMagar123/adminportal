@@ -1,6 +1,5 @@
 .dashboard {
   width: $container-width;
-  border: 1px solid black;
   padding: 10px $general-padding;
   overflow: hidden;
   display: grid;
@@ -8,7 +7,7 @@
   .dashboard__list {
     background-color: $primary-color1;
     text-align: center;
-   
+
     .logo {
       cursor: pointer;
     }
@@ -41,7 +40,7 @@
     display: grid;
     position: relative;
     grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
-    grid-template-areas: "linechart barchart";  
+    grid-template-areas: "linechart barchart";
     // border: 1px solid black;
     padding: $general-padding;
     .dashboard__charts-linechart {
@@ -49,11 +48,10 @@
     }
     .dashboard__charts-barchart {
       grid-area: barchart;
-   
     }
   }
   .dashboard__header {
-    border-bottom: 1px solid black;
+    box-shadow: 0 5px 6px -6px $body-text-color;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -108,6 +106,72 @@
         border-radius: 100%;
         font-size: 20px;
         color: $primary-color1;
+      }
+    }
+  }
+  .dashboard__userno {
+    box-shadow: 0 0 5px $body-text-color;
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    .numbers {
+      padding: $general-padding;
+      border-radius: 15px;
+      width: 150px;
+      h4 {
+        font-size: $page-title-font;
+        font-weight: 700;
+      }
+      p {
+        color: $search-bar-color;
+      }
+      &:nth-child(1) {
+        border: 1px solid $primary-color1;
+        box-shadow: 0 0 5px $primary-color1;
+        transition: 0.4s ease;
+        h4 {
+          color: $primary-color1;
+        }
+        &:hover {
+          transition: 0.4s ease;
+          box-shadow: 0 0 18px $primary-color1;
+
+          p {
+            color: black;
+          }
+        }
+      }
+      &:nth-child(2) {
+        border: 1px solid rgb(196, 33, 33);
+        box-shadow: 0 0 5px rgb(196, 33, 33);
+        transition: 0.4s ease;
+        h4 {
+          color: rgb(196, 33, 33);
+        }
+        &:hover {
+          transition: 0.4s ease;
+          box-shadow: 0 0 18px rgb(196, 33, 33);
+          p {
+            color: black;
+          }
+        }
+      }
+      &:nth-child(3) {
+        border: 1px solid rgb(33, 196, 134);
+        box-shadow: 0 0 5px rgb(33, 196, 134);
+        transition: 0.4s ease;
+        h4 {
+          color: rgb(23, 201, 142);
+        }
+        &:hover {
+          transition: 0.4s ease;
+          box-shadow: 0 0 18px rgb(33, 196, 134);
+          p {
+            color: black;
+          }
+        }
       }
     }
   }
