@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { SideNav } from "../../components";
 import {
   RxHamburgerMenu,
   BiSearch,
@@ -16,99 +16,88 @@ import {
   XAxis,
   YAxis,
   BarChart,
-  Bar
+  Bar,
 } from "recharts";
 export const Dashboard = () => {
-  const navList = ["Dashboard", "Users", "Products", "Settings"];
+
   const productData = Data.products;
   return (
     <div className="dashboard">
       {/* .......side-nav list......... */}
       <div className="dashboard__list">
-        <div className="logo">
-          <h1>Admin Portal</h1>
-        </div>
-        <ul>
-          {navList.map((item) => {
-            return (
-              <li key={item}>
-                <NavLink key={item}>{item}</NavLink>
-              </li>
-            );
-          })}
-        </ul>
+        <SideNav />
       </div>
-      {/* header*/}
-       <div className="dashboard__header">
-        <div className="ham-icon">
-          <i>
-            <RxHamburgerMenu />
-          </i>
-        </div>
-        <div className="search">
-          <input
-            type="text"
-            name="username"
-            placeholder="Search user by name"
-          />
-          <i>
-            <BiSearch />
-          </i>
-        </div>
-        <div className="adminlogo">
-          <div className="badge">
+      <div className="dashboard__body">
+        {/* .........header..........*/}
+        <div className="dashboard__header">
+          <div className="ham-icon">
             <i>
-              <BsBell />
+              <RxHamburgerMenu />
             </i>
-            <span>1</span>
           </div>
-          <i>
-            <RiAdminFill />
-          </i>
+          <div className="search">
+            <input
+              type="text"
+              name="username"
+              placeholder="Search user by name"
+            />
+            <i>
+              <BiSearch />
+            </i>
+          </div>
+          <div className="adminlogo">
+            <div className="badge">
+              <i>
+                <BsBell />
+              </i>
+              <span>1</span>
+            </div>
+            <i>
+              <RiAdminFill />
+            </i>
+          </div>
         </div>
 
-      {/* ........Charts.......... */}
-      <div className="dashboard__charts">
-        {/* .......LineChart.......... */}
-        <div className="dashboard__charts-linechart" key={productData.id}>
-          <LineChart width={600} height={300} data={productData}>
-            <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-            <XAxis dataKey="title" />
-            <YAxis dataKey="stock" />
-            <Tooltip />
-            <Legend />
-            <Line
-              type="monotone"
-              dataKey="stock"
-              stroke="#8884d8"
-              strokeWidth={3}
-            />
-            <Line
-              type="monotone"
-              dataKey="discountPercentage"
-              stroke="#82ca9d"
-              strokeWidth={3}
-            />
-          </LineChart>
+        {/* ........Charts.......... */}
+        <div className="dashboard__charts">
+          {/* .......LineChart.......... */}
+          <div className="dashboard__charts-linechart" key={productData.id}>
+            <LineChart width={400} height={300} data={productData}>
+              <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
+              <XAxis dataKey="title" />
+              <YAxis dataKey="stock" />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="stock"
+                stroke="#8884d8"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="discountPercentage"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+            </LineChart>
+          </div>
+          <div className="dashboard__charts-barchart" key={productData.id}>
+            <BarChart width={400} height={300} data={productData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="title" />
+              <YAxis dataKey="stock" />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="category" fill="#8884d8" />
+              <Bar dataKey="stock" fill="#82ca9d" />
+            </BarChart>
+          </div>
         </div>
-        <div className="dashboard__charts-barchart" key={productData.id}>
-          <BarChart width={600} height={300} data={productData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="title" />
-            <YAxis dataKey="stock"/>
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="category" fill="#8884d8" />
-            <Bar dataKey="stock" fill="#82ca9d" />
-          </BarChart>
-        </div>
-      </div>
 
-      {/* .....table......... */}
-      <div className="dashboard__table">
-        
+        {/* .....table......... */}
+        <div className="dashboard__table"></div>
       </div>
-     
-      </div>
-      )
+    </div>
+  );
 };

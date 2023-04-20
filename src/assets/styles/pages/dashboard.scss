@@ -2,60 +2,54 @@
   width: $container-width;
   border: 1px solid black;
   padding: 10px $general-padding;
-  .dashboard__list{
-    width: 270px;
-    height: 100vh;
-    background-color: $primary-color1;    
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+  .dashboard__list {
+    background-color: $primary-color1;
     text-align: center;
-    .logo{
+   
+    .logo {
       cursor: pointer;
-
     }
-    h1{
+    h1 {
       font-weight: 600;
       padding: $general-padding;
     }
-    ul{
+    ul {
       display: flex;
-      flex-direction: column; 
-      li{
+      flex-direction: column;
+      li {
         font-size: $page-title-font;
-        margin:$general-margin;
+        margin: $general-margin;
         cursor: pointer;
-        a{
+        a {
           padding: 15px 10px;
-          margin: $general-margin;          
+          margin: $general-margin;
           color: $text-color;
-          &:hover{
+          &:hover {
             background-color: $primary-color2;
           }
           // &.active{
           //   text-decoration: underline;
           // }
         }
-
-      } 
+      }
     }
   }
-  .dashboard__charts{
+  .dashboard__charts {
     display: grid;
     position: relative;
-    grid-template-columns: repeat(auto-fit,minmax(auto,1fr));
-    grid-template-areas: "linechart barchart";
-    width: 1300px;
-    top: -705px;
-    left: 269px;
-    border: 1px solid black;
-    gap:$general-gap;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+    grid-template-areas: "linechart barchart";  
+    // border: 1px solid black;
     padding: $general-padding;
-    .dashboard__charts-linechart{
+    .dashboard__charts-linechart {
       grid-area: linechart;
     }
-    .dashboard__charts-barchart{
-      grid-area:barchart;
-      // position: absolute;
-      // top: 12px;
-      // left: 620px;
+    .dashboard__charts-barchart {
+      grid-area: barchart;
+   
     }
   }
   .dashboard__header {
@@ -92,7 +86,7 @@
       align-items: center;
       justify-content: center;
       .badge {
-        position: relative;
+        // position: relative;
         i {
           padding: 10px;
           border-radius: 100%;
@@ -100,9 +94,9 @@
           color: $primary-color1;
         }
         span {
-          position: absolute;
+          position: relative;
           text-align: center;
-          inset: -10px 0 20px 20px;
+          inset: -15px 0 0px -20px;
           background-color: rgb(241, 34, 34);
           border-radius: 50%;
           color: white;
@@ -118,4 +112,3 @@
     }
   }
 }
-
