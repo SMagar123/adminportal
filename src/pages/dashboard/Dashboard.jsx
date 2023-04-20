@@ -17,6 +17,7 @@ import {
   YAxis,
   BarChart,
   Bar,
+  Bar,
 } from "recharts";
 export const Dashboard = () => {
 
