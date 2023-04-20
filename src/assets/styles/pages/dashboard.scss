@@ -3,37 +3,48 @@
   padding: 10px $general-padding;
   overflow: hidden;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, auto));
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
   .dashboard__list {
     background-color: $primary-color1;
     text-align: center;
+    // width: 200px;
 
     .logo {
       cursor: pointer;
     }
-    h1 {
+    h2 {
       font-weight: 600;
       padding: $general-padding;
+      text-align: left;
+
     }
     ul {
       display: flex;
       flex-direction: column;
       li {
-        font-size: $page-title-font;
-        margin: $general-margin;
+        font-size: 20px;
+        font-weight: 400;
+        margin: 15px 0;
         cursor: pointer;
+        text-align: left;
+        padding: 10px 15px;
+        transition: all $transition-speed ease-out;
+
+        &:hover {
+          background-color: $menu-item-hover;
+          text-shadow: 0 0 2px $text-color;
+        }
         a {
-          padding: 15px 10px;
           margin: $general-margin;
           color: $text-color;
-          &:hover {
-            background-color: $primary-color2;
-          }
           // &.active{
           //   text-decoration: underline;
           // }
         }
       }
+    }
+    img{
+      width: 50%;
     }
   }
   .dashboard__charts {
@@ -111,7 +122,7 @@
     }
   }
   .dashboard__userno {
-    box-shadow: 0 0 5px $body-text-color;
+    // box-shadow: 0 0 5px $body-text-color;
     padding: 10px 30px;
     display: flex;
     align-items: center;
