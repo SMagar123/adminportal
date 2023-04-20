@@ -1,41 +1,68 @@
-@import "../abstracts/variables";
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 .dashboard {
+  width: $container-width;
+  border: 1px solid black;
+  padding: 10px $general-padding;
   .dashboard__header {
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: $general-padding;
     gap: $general-gap;
+    .ham-icon {
+      i {
+        color: $primary-color1;
+      }
+    }
     .search {
-      border: 1px solid black;
       display: flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: center;
-      padding: 10px;
+      padding: 5px $general-padding;
       input {
+        font-size: $font-size;
+        padding: 5px $general-padding;
         outline: none;
+        border: none;
+        border-bottom: 1px solid $primary-color1;
       }
       i {
-        background-color: $primary-color1;
         font-size: 20px;
-        padding: 10px;
+        color: $primary-color1;
       }
     }
     .adminlogo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .badge {
+        position: relative;
+        i {
+          padding: 10px;
+          border-radius: 100%;
+          font-size: 20px;
+          color: $primary-color1;
+        }
+        span {
+          position: absolute;
+          text-align: center;
+          inset: -10px 0 20px 20px;
+          background-color: rgb(241, 34, 34);
+          border-radius: 50%;
+          color: white;
+          font-size: 15px;
+        }
+      }
       i {
         padding: 10px;
         border-radius: 100%;
         font-size: 20px;
         color: $primary-color1;
-        &:nth-child(2) {
-          margin-left: 20px;
-        }
       }
     }
   }

@@ -34,9 +34,12 @@ export const Dashboard = () => {
           </i>
         </div>
         <div className="adminlogo">
-          <i>
-            <BsBell />
-          </i>
+          <div className="badge">
+            <i>
+              <BsBell />
+            </i>
+            <span>1</span>
+          </div>
           <i>
             <RiAdminFill />
           </i>
