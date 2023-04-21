@@ -16,7 +16,6 @@
       font-weight: 600;
       padding: $general-padding;
       text-align: left;
-
     }
     ul {
       display: flex;
@@ -43,7 +42,7 @@
         }
       }
     }
-    img{
+    img {
       width: 50%;
     }
   }
@@ -63,7 +62,7 @@
     }
   }
   .dashboard__header {
-    box-shadow: 0 5px 6px -6px $body-text-color;
+    box-shadow: 0 2px 6px -6px $body-text-color;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -118,6 +117,20 @@
         border-radius: 100%;
         font-size: 20px;
         color: $primary-color1;
+        border: 1px solid $primary-color1;
+      }
+      .admin-panel {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .admin-name {
+          padding: 0px $general-padding;
+          select {
+            border: none;
+            outline: none;
+            color: #777777;
+          }
+        }
       }
     }
   }
@@ -128,13 +141,25 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
+
     .numbers {
       padding: $general-padding;
       border-radius: 15px;
       width: 150px;
+      .number-display {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid $primary-color1;
+        height: 50px;
+        width: 50px;
+        border-radius: 100%;
+        padding: 8px;
+      }
       h4 {
         font-size: $page-title-font;
         font-weight: 700;
+        border-radius: 50%;
       }
       p {
         color: $search-bar-color;
@@ -187,31 +212,31 @@
       }
     }
   }
-  .dashboard__table {
+}
+.dashboard__table {
+  padding: $general-padding;
+  text-align: center;
+  table {
+    width: 100%;
+    border: 1px;
     padding: $general-padding;
-    text-align: center;
-    table {
-      width: 100%;
-      border: 1px;
-      padding: $general-padding;
-      box-shadow: 0 0 5px $body-text-color;
-      th {
-        border: 1px solid $primary-color1;
-        font-size: $font-size;
-        background-color: $primary-color2;
-        color: $body-text-color;
-        padding: 10px 15px;
-      }
-      td {
-        border: 1px solid $search-bar-color;
-        font-size: $font-size;
-        padding: 10px 8px;
-      }
-      tbody {
-        tr {
-          &:nth-child(even) {
-            background-color: #f3ebeb;
-          }
+    box-shadow: 0 0 5px $body-text-color;
+    th {
+      border: 1px solid $primary-color1;
+      font-size: $font-size;
+      background-color: $primary-color2;
+      color: $body-text-color;
+      padding: 10px 15px;
+    }
+    td {
+      border: 1px solid $search-bar-color;
+      font-size: $font-size;
+      padding: 10px 8px;
+    }
+    tbody {
+      tr {
+        &:nth-child(even) {
+          background-color: #f3ebeb;
         }
       }
     }

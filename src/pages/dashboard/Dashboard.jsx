@@ -34,7 +34,7 @@ export const Dashboard = () => {
               <RxHamburgerMenu />
             </i>
           </div>
-          <div className="search">
+          {/* <div className="search">
             <input
               type="text"
               name="username"
@@ -43,7 +43,7 @@ export const Dashboard = () => {
             <i>
               <BiSearch />
             </i>
-          </div>
+          </div> */}
           <div className="adminlogo">
             <div className="badge">
               <i>
@@ -51,9 +51,19 @@ export const Dashboard = () => {
               </i>
               <span>1</span>
             </div>
-            <i>
-              <RiAdminFill />
-            </i>
+            <div className="admin-panel">
+              <i>
+                <RiAdminFill />
+              </i>
+              <div className="admin-name">
+                <h4>Admin</h4>
+                <select name="admin">
+                  <option value="user">Admin</option>
+                  <option value="profile">View Profile</option>
+                  <option value="logout">LogOut</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -96,7 +106,10 @@ export const Dashboard = () => {
         {/*Users and product number listing */}
         <div className="dashboard__userno">
           <div className="numbers">
-            <h4>20</h4>
+            <div className="number-display">
+              <h4>20</h4>
+            </div>
+
             <p>Users</p>
           </div>
           <div className="numbers">
@@ -115,7 +128,7 @@ export const Dashboard = () => {
               <th>S.N.</th>
               <th>Product</th>
               <th>Category</th>
-              <th>Stock</th>              
+              <th>Stock</th>
             </thead>
             <tbody>
               {productData.slice(0, 5).map((item) => {
