@@ -1,11 +1,13 @@
 $primary-color1: #1e7898;
+$menu-item-hover: lighten($primary-color1,5%);
 $primary-color2: #a8d5e5;
 $text-color: #ffffff;
 $body-text-color: #333;
 $search-bar-color: #777777;
 $general-gap: 20px;
 $container-width: 1200px;
-$general-padding: 15px;
+$general-padding: 16px;
 $general-margin: 20px;
-$page-title-font: 25px;
+$page-title-font: 24px;
 $font-size: 16px;
+$transition-speed: 250ms;

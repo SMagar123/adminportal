@@ -109,7 +109,28 @@ export const Dashboard = () => {
           </div>
         </div>
         {/* .....table......... */}
-        <div className="dashboard__table"></div>
+        <div className="dashboard__table">
+          <table>
+            <thead className="dasboard__table-head">
+              <th>S.N.</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Stock</th>              
+            </thead>
+            <tbody>
+              {productData.slice(0, 5).map((item) => {
+                return (
+                  <tr key={item.id}>
+                    <td data-label="S.N.">{item.id}</td>
+                    <td data-label="Product">{item.title}</td>
+                    <td data-label="Category">{item.category}</td>
+                    <td data-label="Stock">{item.stock}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

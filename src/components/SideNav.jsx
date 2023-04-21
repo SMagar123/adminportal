@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Adminimage from "../assets/images/admin.png"
 export const SideNav = () => {
-  const navList = ["Dashboard", "Users", "Products", "Settings"];
+  const navList = ["Dashboard", "Users", "Products","Brands","Settings"];
   return (
     <>
       <div className="logo">
-        <h1>Admin Portal</h1>
+        <h2>Admin Portal</h2>
       </div>
       <ul>
         {navList.map((item) => {
@@ -16,6 +17,7 @@ export const SideNav = () => {
           );
         })}
       </ul>
+      {/* <img src={Adminimage} alt="admin" /> */}
     </>
   );
 };
