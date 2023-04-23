@@ -36,9 +36,9 @@ export const SideNav = () => {
         <i onClick={() => toggleButton()}>
           <BiDownArrow />
         </i>
-        {show ? <input type="text" className="searchbar" placeholder="Filter Menu" /> : null}
+        {show ? <input type="text" className="nav-filter" placeholder="Filter Menu" /> : null}
       </div>
-      <ul>
+      <ul className="sidebar">
         {navList.map((item) => {
           return (
             <li key={item.nav}>
