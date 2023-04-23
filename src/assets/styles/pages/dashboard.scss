@@ -10,21 +10,21 @@
     position: relative;
     .logo {
       cursor: pointer;
-      .nav-filter{
+      .nav-filter {
         position: absolute;
         top: 92px;
         width: 174px;
         border-radius: 6px;
         padding: 5px 0;
         font-size: 12px;
-        &:not(:focus){
-          background-color:#003b50;
+        &:not(:focus) {
+          background-color: #003b50;
         }
-        &:focus{
-          background-color:rgba(#054258,0.1);
+        &:focus {
+          background-color: rgba(#054258, 0.1);
           color: $text-color;
         }
-      }      
+      }
     }
     h2 {
       font-weight: 700;
@@ -32,14 +32,14 @@
       background-color: $menu-item-hover;
       text-align: center;
     }
-    i{
+    i {
       position: relative;
       top: -5px;
       left: 110px;
       background-color: $primary-color1;
       border-radius: 50%;
       padding: 5px 10px;
-      &:hover{
+      &:hover {
         border: 1px solid $primary-color1;
         background-color: $menu-item-hover;
         text-shadow: 0 0 2px $text-color;
@@ -183,71 +183,59 @@
     }
   }
   .dashboard__userno {
-    // box-shadow: 0 0 5px $body-text-color;
-    // border: 1px solid green;
     padding: $general-padding;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-align: center;
+    text-align: left;
     .numbers {
       width: 160px;
       padding: $general-padding;
       border-radius: 15px;
-      .info{
-          display: flex;
-          justify-content: space-between;      
-          h4 {
-            font-weight: 700;
-          }
-          p {
-            font-weight: bold;
-            color: $search-bar-color;
-          }
+      .info {
+        display: flex;
+        justify-content: space-between;
+        h4 {
+          font-weight: 700;
         }
-      .bar{
+        p {
+          font-weight: bold;
+          color: $search-bar-color;
+        }
+      }
+      .bar {
         position: relative;
         width: 100%;
         height: 10px;
         margin-top: 5px;
         background-color: $search-bar-color;
         border-radius: 25px;
-          span{
-            width: 50%;
-            height: 100%;
-            position: absolute;
-            border-radius: 25px;
-          }
-          .user{
+        span {
+          width: 50%;
+          height: 100%;
+          position: absolute;
+          border-radius: 25px;
+        }
+        .user {
           background-color: $primary-color1;
           width: 20%;
         }
-        .brands{
+        .brands {
           background-color: rgb(196, 33, 33);
           width: 40%;
         }
-        .products{
+        .products {
           background-color: rgb(33, 196, 134);
           width: 36%;
         }
-      width: 150px;
-      .number-display {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: 5px solid $primary-color1;
-        height: 50px;
-        width: 50px;
-        border-radius: 100%;
-        padding: 8px;
-      }
-      h4 {
-        font-size: $page-title-font;
-        font-weight: 700;
-        border-radius: 50%;
-      }
-      p {
-        color: $search-bar-color;
+        h4 {
+          font-size: $page-title-font;
+          font-weight: 700;
+          border-radius: 50%;
+        }
+        p {
+          color: $search-bar-color;
+        }
       }
       &:nth-child(1) {
         border: 1px solid $primary-color1;
@@ -259,7 +247,6 @@
         &:hover {
           transition: 0.4s ease;
           box-shadow: 0 0 18px $primary-color1;
-          box-shadow: 0 0 10px #e0dede;
           p {
             color: black;
           }
