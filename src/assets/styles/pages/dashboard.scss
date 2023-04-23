@@ -1,7 +1,7 @@
 .dashboard {
   width: $container-width;
   padding: 10px $general-padding;
-  overflow: hidden;
+  // overflow: hidden;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, auto));
   .dashboard__list {
@@ -63,9 +63,6 @@
         a {
           margin: $general-margin;
           color: $text-color;
-          // &.active{
-          //   text-decoration: underline;
-          // }
         }
       }
     }
@@ -75,24 +72,19 @@
   }
   .dashboard__charts {
     display: grid;
-    position: relative;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-template-areas: "linechart barchart";
     grid-template-areas: "linechart barchart";
-    // border: 1px solid black;
     padding: $general-padding;
-    // border: 1px solid red;
     gap: $general-gap;
     .dashboard__charts-linechart {
       grid-area: linechart;
-      // border: 1px solid black;
       padding: 10px 5px;
       border-radius: 15px;
       box-shadow: 0 0 10px #e0dede;
     }
     .dashboard__charts-barchart {
       grid-area: barchart;
-      // border: 1px solid black;
       padding: 10px 5px;
       border-radius: 15px;
       box-shadow: 0 0 10px #e0dede;
@@ -107,6 +99,7 @@
     gap: $general-gap;
     // border: 1px solid blue;
     margin-bottom: $general-padding;
+    flex-wrap: wrap;
     .ham-icon {
       i {
         color: $primary-color1;
@@ -288,9 +281,6 @@
 .dashboard__table {
   padding: $general-padding;
   text-align: center;
-  // border: 1px solid blue;
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(250px, auto));
   overflow-x: auto;
   table {
     width: 100%;
@@ -322,9 +312,104 @@
   padding: $general-padding;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
   .react-calendar {
     font-family: "Lato", sans-serif;
     box-shadow: 0 0 10px #e0dede;
     border: none;
+  }
+}
+//tablets
+@media (max-width: 767px) {
+  .dashboard {
+    max-width: 767px;
+    border: 1px solid black;
+  }
+  .dashboard__list {
+    display: none;
+  }
+  .dashboard__extras {
+    flex-wrap: wrap;
+    .react-calendar {
+      width: 100%;
+    }
+    .map {
+      width: 100%;
+      iframe {
+        width: 100%;
+      }
+    }
+  }
+  .dashboard__charts {
+    .dashboard__charts-linechart {
+      .recharts-wrapper {
+        .recharts-surface {
+          width: 350px;
+        }
+        .recharts-legend-wrapper {
+          display: none;
+        }
+      }
+    }
+    .dashboard__charts-barchart {
+      .recharts-wrapper {
+        .recharts-surface {
+          width: 350px;
+        }
+        .recharts-legend-wrapper {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+//mobiles
+@media (max-width: 450px) {
+  .dashboard {
+    max-width: 450px;
+  }
+  .dashboard__userno {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .dashboard__extras {
+    .react-calendar {
+      width: 100%;
+    }
+    .map {
+      iframe {
+        width: 390px;
+      }
+    }
+  }
+  .dashboard__charts {
+    width: 100%;
+    .dashboard__charts-linechart {
+      width: 100%;
+    }
+    .dashboard__charts-barchart {
+      display: none;
+    }
+  }
+  .dashboard__table {
+    table {
+      th {
+        display: none;
+      }
+      td {
+        display: block;
+        width: 100%;
+        text-align: right;
+        position: relative;
+        &::before {
+          content: attr(data-label);
+          margin-right: 10px;
+
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
   }
 }
