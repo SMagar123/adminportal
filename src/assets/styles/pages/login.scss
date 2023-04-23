@@ -10,9 +10,11 @@
     line-height: 1.5;
     border-radius: 15px;
     box-shadow: 0 0 10px 5px $primary-color2;
-    margin: 150px;
+    width: 600px;
+    height: 350px;
+    margin-top: 25px;
     h3 {
-      font-size: $page-title-font;
+      font-size: 30px;
     }
     form {
       display: flex;
@@ -20,16 +22,22 @@
       padding: $general-padding;
       flex: 1;
       input {
-        font-size: $font-size;
+        font-size: 20px;
         padding: 5px $general-padding;
-        margin-bottom: $general-margin;
+        margin-bottom: 40px;
         outline: none;
         border: none;
         border-bottom: 1px solid $primary-color1;
+        line-height: 2;
       }
       .form-password {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        input {
+          width: 500px;
+        }
         i {
           font-size: 25px;
           color: $primary-color1;
