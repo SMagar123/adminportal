@@ -1,23 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
+import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
+import { BiDownArrow, BiHomeAlt } from "react-icons/bi";
+import { RiProductHuntFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
-import Adminimage from "../assets/images/admin.png"
+
 export const SideNav = () => {
-  const navList = ["Dashboard", "Users", "Products","Brands","Settings"];
+  const navList = [
+    {
+      nav: "Dashboard",
+      icon: <BiHomeAlt />,
+    },
+    {
+      nav: "Users",
+      icon: <AiOutlineUser />,
+    },
+    {
+      nav: "Products",
+      icon: <RiProductHuntFill />,
+    },
+    {
+      nav: "Settings",
+      icon: <AiOutlineSetting />,
+    },
+  ];
+  const [show, setShow] = useState(false);
+  const toggleButton = () => {
+    setShow(!show);
+  };
+  // console.log(show);
   return (
     <>
       <div className="logo">
+        {/* <img src="" alt="logo" /> */}
         <h2>Admin Portal</h2>
+        <i onClick={() => toggleButton()}>
+          <BiDownArrow />
+        </i>
+        {show ? <input type="text" className="nav-filter" placeholder="Filter Menu" /> : null}
       </div>
-      <ul>
+      <ul className="sidebar">
         {navList.map((item) => {
           return (
-            <li key={item}>
-              <NavLink key={item}>{item}</NavLink>
+            <li key={item.nav}>
+              <NavLink key={item.nav}>
+                {item.icon} {item.nav}
+              </NavLink>
             </li>
           );
         })}
       </ul>
-      {/* <img src={Adminimage} alt="admin" /> */}
     </>
   );
 };

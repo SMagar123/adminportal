@@ -106,24 +106,38 @@ export const Dashboard = () => {
               </BarChart>
             </div>
           </div>
-          {/*Users and product number listing */}
-          <div className="dashboard__userno">
-            <div className="numbers">
-              <div className="number-display">
-                <h4>20</h4>
-              </div>
 
-              <p>Users</p>
-            </div>
-            <div className="numbers">
-              <h4>12</h4>
-              <p>Products</p>
-            </div>
-            <div className="numbers">
-              <h4>5</h4>
-              <p>Brands</p>
-            </div>
-          </div>
+        </div>
+        {/*Users and product number listing */}
+        <div className="dashboard__userno">
+          <div className="numbers">
+              <div className="info">
+                <h4>Users</h4>
+                <p className="percent">20%</p>
+              </div>
+              <div className="bar">
+                <span className="user"></span>
+              </div>
+          </div> 
+          <div className="numbers">
+              <div className="info">
+                <h4>Brands</h4>
+                <p className="percent">40%</p>
+              </div>
+              <div className="bar">
+                <span className="brands"></span>
+              </div>
+          </div> 
+          <div className="numbers">
+              <div className="info">
+                <h4>Products</h4>
+                <p className="percent">36%</p>
+              </div>
+              <div className="bar">
+                <span className="products"></span>
+              </div>
+          </div>         
+  
           {/* .....table......... */}
           <div className="dashboard__table">
             <table>

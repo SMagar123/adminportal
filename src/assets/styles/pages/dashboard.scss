@@ -6,29 +6,56 @@
   grid-template-columns: repeat(auto-fit, minmax(150px, auto));
   .dashboard__list {
     background-color: $primary-color1;
-    text-align: center;
-    // width: 200px;
-
+    text-align: left;
+    position: relative;
     .logo {
       cursor: pointer;
+      .nav-filter{
+        position: absolute;
+        top: 92px;
+        width: 174px;
+        border-radius: 6px;
+        padding: 5px 0;
+        font-size: 12px;
+        &:not(:focus){
+          background-color:#003b50;
+        }
+        &:focus{
+          background-color:rgba(#054258,0.1);
+          color: $text-color;
+        }
+      }      
     }
     h2 {
-      font-weight: 600;
+      font-weight: 700;
       padding: $general-padding;
-      text-align: left;
+      background-color: $menu-item-hover;
+      text-align: center;
+    }
+    i{
+      position: relative;
+      top: -5px;
+      left: 110px;
+      background-color: $primary-color1;
+      border-radius: 50%;
+      padding: 5px 10px;
+      &:hover{
+        border: 1px solid $primary-color1;
+        background-color: $menu-item-hover;
+        text-shadow: 0 0 2px $text-color;
+        color: $text-color;
+      }
     }
     ul {
       display: flex;
       flex-direction: column;
+      margin-top: 18px;
       li {
-        font-size: 20px;
+        font-size: $font-size;
         font-weight: 400;
-        margin: 15px 0;
         cursor: pointer;
-        text-align: left;
         padding: 10px 15px;
         transition: all $transition-speed ease-out;
-
         &:hover {
           background-color: $menu-item-hover;
           text-shadow: 0 0 2px $text-color;
@@ -163,10 +190,46 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
-
     .numbers {
+      width: 160px;
       padding: $general-padding;
       border-radius: 15px;
+      .info{
+          display: flex;
+          justify-content: space-between;      
+          h4 {
+            font-weight: 700;
+          }
+          p {
+            font-weight: bold;
+            color: $search-bar-color;
+          }
+        }
+      .bar{
+        position: relative;
+        width: 100%;
+        height: 10px;
+        margin-top: 5px;
+        background-color: $search-bar-color;
+        border-radius: 25px;
+          span{
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            border-radius: 25px;
+          }
+          .user{
+          background-color: $primary-color1;
+          width: 20%;
+        }
+        .brands{
+          background-color: rgb(196, 33, 33);
+          width: 40%;
+        }
+        .products{
+          background-color: rgb(33, 196, 134);
+          width: 36%;
+        }
       width: 150px;
       .number-display {
         display: flex;
