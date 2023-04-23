@@ -37,16 +37,6 @@ export const Dashboard = () => {
               <RxHamburgerMenu />
             </i>
           </div>
-          {/* <div className="search">
-            <input
-              type="text"
-              name="username"
-              placeholder="Search user by name"
-            />
-            <i>
-              <BiSearch />
-            </i>
-          </div> */}
           <div className="adminlogo">
             <div className="badge">
               <i>
@@ -107,10 +97,9 @@ export const Dashboard = () => {
             </div>
           </div>
 
-        </div>
-        {/*Users and product number listing */}
-        <div className="dashboard__userno">
-          <div className="numbers">
+          {/*Users and product number listing */}
+          <div className="dashboard__userno">
+            <div className="numbers">
               <div className="info">
                 <h4>Users</h4>
                 <p className="percent">20%</p>
@@ -118,8 +107,8 @@ export const Dashboard = () => {
               <div className="bar">
                 <span className="user"></span>
               </div>
-          </div> 
-          <div className="numbers">
+            </div>
+            <div className="numbers">
               <div className="info">
                 <h4>Brands</h4>
                 <p className="percent">40%</p>
@@ -127,8 +116,8 @@ export const Dashboard = () => {
               <div className="bar">
                 <span className="brands"></span>
               </div>
-          </div> 
-          <div className="numbers">
+            </div>
+            <div className="numbers">
               <div className="info">
                 <h4>Products</h4>
                 <p className="percent">36%</p>
@@ -136,8 +125,9 @@ export const Dashboard = () => {
               <div className="bar">
                 <span className="products"></span>
               </div>
-          </div>         
-  
+            </div>
+          </div>
+
           {/* .....table......... */}
           <div className="dashboard__table">
             <table>
