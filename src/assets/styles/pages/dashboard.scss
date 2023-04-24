@@ -73,22 +73,23 @@
   .dashboard__charts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-template-areas: "linechart barchart";
-    grid-template-areas: "linechart barchart";
     padding: $general-padding;
     gap: $general-gap;
-    .dashboard__charts-linechart {
-      grid-area: linechart;
-      padding: 10px 5px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #e0dede;
-    }
-    .dashboard__charts-barchart {
-      grid-area: barchart;
-      padding: 10px 5px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px #e0dede;
-    }
+    height: 250px;
+    // .dashboard__charts-linechart {
+    //   // grid-area: linechart;
+    //   height: 250px;
+    //   padding: 10px 5px;
+    //   border-radius: 15px;
+    //   box-shadow: 0 0 10px #e0dede;
+    // }
+    // .dashboard__charts-barchart {
+    //   // grid-area: barchart;
+    //   height: 250px;
+    //   padding: 10px 5px;
+    //   border-radius: 15px;
+    //   box-shadow: 0 0 10px #e0dede;
+    // }
   }
   .dashboard__header {
     box-shadow: 0 2px 6px -6px $body-text-color;
@@ -385,12 +386,8 @@
   }
   .dashboard__charts {
     width: 100%;
-    .dashboard__charts-linechart {
-      width: 100%;
-    }
-    .dashboard__charts-barchart {
-      display: none;
-    }
+    border: 1px solid red;
+    height: max-content;
   }
   .dashboard__table {
     table {

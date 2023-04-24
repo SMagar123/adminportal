@@ -1,2 +1,3 @@
 import { SideNav } from "./SideNav";
-export { SideNav };
+import { ProtectedRoute } from "./ProtectedRoute";
+export { SideNav, ProtectedRoute };
