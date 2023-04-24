@@ -12,7 +12,8 @@
       cursor: pointer;
       .nav-filter {
         position: absolute;
-        top: 92px;
+        top: 86px;
+        left: 24px;
         width: 174px;
         border-radius: 6px;
         padding: 5px 0;
@@ -20,6 +21,7 @@
         &:not(:focus) {
           background-color: #003b50;
         }
+       
         &:focus {
           background-color: rgba(#054258, 0.1);
           color: $text-color;
@@ -35,7 +37,7 @@
     i {
       position: relative;
       top: -5px;
-      left: 110px;
+      left: 82px;
       background-color: $primary-color1;
       border-radius: 50%;
       padding: 5px 10px;
@@ -49,7 +51,7 @@
     ul {
       display: flex;
       flex-direction: column;
-      margin-top: 18px;
+      margin-top: 24px;
       li {
         font-size: $font-size;
         font-weight: 400;
@@ -70,26 +72,32 @@
       width: 50%;
     }
   }
+
   .dashboard__charts {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    // grid-template-areas: "linechart barchart";
+    // border: 1px solid black;
     padding: $general-padding;
-    gap: $general-gap;
-    height: 250px;
-    // .dashboard__charts-linechart {
-    //   // grid-area: linechart;
-    //   height: 250px;
-    //   padding: 10px 5px;
-    //   border-radius: 15px;
-    //   box-shadow: 0 0 10px #e0dede;
-    // }
-    // .dashboard__charts-barchart {
-    //   // grid-area: barchart;
-    //   height: 250px;
-    //   padding: 10px 5px;
-    //   border-radius: 15px;
-    //   box-shadow: 0 0 10px #e0dede;
-    // }
+    // border: 1px solid red;
+    // gap: $general-gap;
+    height: 300px;
+    grid-gap: 16px;
+    .dashboard__charts-linechart {
+      // height: 250px;
+      // grid-area: linechart;
+      padding: 10px 5px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #e0dede;
+    }
+    .dashboard__charts-barchart {
+      // grid-area: barchart;
+      // height: 250px;
+      padding: 10px 5px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #e0dede;
+    }
   }
   .dashboard__header {
     box-shadow: 0 2px 6px -6px $body-text-color;
@@ -182,6 +190,7 @@
     align-items: center;
     justify-content: space-between;
     text-align: left;
+   
     .numbers {
       width: 160px;
       padding: $general-padding;
@@ -204,6 +213,7 @@
         margin-top: 5px;
         background-color: $search-bar-color;
         border-radius: 25px;
+        
         span {
           width: 50%;
           height: 100%;
@@ -221,14 +231,6 @@
         .products {
           background-color: rgb(33, 196, 134);
           width: 36%;
-        }
-        h4 {
-          font-size: $page-title-font;
-          font-weight: 700;
-          border-radius: 50%;
-        }
-        p {
-          color: $search-bar-color;
         }
       }
       &:nth-child(1) {
@@ -279,6 +281,8 @@
     }
   }
 }
+
+
 .dashboard__table {
   padding: $general-padding;
   text-align: center;
@@ -410,3 +414,47 @@
     }
   }
 }
+
+  
+
+@media screen and (max-width: 991px) {
+  .dashboard {
+    // max-width: 991px;
+    .dashboard__list {
+      display: none;
+    }
+    .dashboard__body {
+      padding: 30px;
+      border: 1px solid black;
+    }
+    .dashboard__charts {
+      // grid-template-columns: 1fr;
+      // grid-template-areas:
+      //   "linechart"
+      //   "barchart";
+      height: max-content;
+      justify-content: center;
+      border: 1px solid black;
+      .dashboard__charts-linechart {
+        width: 850px;
+        height: 500px;
+        .lineChart {
+          width: 800px;
+          height: 500px;
+        }
+        .recharts-wrapper {
+          .recharts-surface {
+            // width: 850px;
+            // height: 950px;
+          }
+        }
+        //  width: 100%;
+        border: 1px solid black;
+      }
+      .dashboard__charts-barchart {
+        
+      }
+    }
+  }
+}
+

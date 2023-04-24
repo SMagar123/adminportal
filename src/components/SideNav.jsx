@@ -4,12 +4,10 @@ import { BiDownArrow, BiHomeAlt } from "react-icons/bi";
 import { RiProductHuntFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
 
+
 export const SideNav = () => {
   const navList = [
-    {
-      nav: "Dashboard",
-      icon: <BiHomeAlt />,
-    },
+    
     {
       nav: "Users",
       icon: <AiOutlineUser />,
@@ -39,10 +37,13 @@ export const SideNav = () => {
         {show ? <input type="text" className="nav-filter" placeholder="Filter Menu" /> : null}
       </div>
       <ul className="sidebar">
+        <li>
+          <NavLink to="/Dashboard"><BiHomeAlt /> Dashboard</NavLink>
+        </li>
         {navList.map((item) => {
           return (
             <li key={item.nav}>
-              <NavLink key={item.nav}>
+              <NavLink to={item.nav} key={item.nav}>
                 {item.icon} {item.nav}
               </NavLink>
             </li>

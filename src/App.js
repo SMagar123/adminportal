@@ -7,7 +7,7 @@ function App() {
   const [isLoggedIn, setLoggedIn] = useState(false);
   return (
     <BrowserRouter>
-      <div className="App">
+      <div className="container">
         <Routes>
           <Route index element={<Login stateTrigger={setLoggedIn} />} />
           <Route
@@ -19,6 +19,10 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route exact path="/Users" element={<Users/>} />
+          <Route exact path="/Products" element={<Product/>} />
+          <Route exact path="/Settings" element={<Settings/>} />
+
         </Routes>
       </div>
     </BrowserRouter>

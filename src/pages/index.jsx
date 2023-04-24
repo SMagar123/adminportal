@@ -1,3 +1,3 @@
-import { Dashboard } from "./dashboard/Dashboard";
-import { Login } from "./login/Login";
+import { Dashboard } from "./Dashboard";
+import { Login } from "./Login";
 export { Dashboard, Login };
