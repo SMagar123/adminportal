@@ -14,9 +14,10 @@ function App() {
             exact
             path="/dashboard"
             element={
-              <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <Dashboard />
-              </ProtectedRoute>
+              <Dashboard />
+              // <ProtectedRoute isLoggedIn={isLoggedIn}>
+              //   <Dashboard />
+              // </ProtectedRoute>
             }
           />
         </Routes>

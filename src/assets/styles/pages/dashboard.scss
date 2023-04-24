@@ -98,7 +98,6 @@
     justify-content: space-between;
     padding: $general-padding;
     gap: $general-gap;
-    // border: 1px solid blue;
     margin-bottom: $general-padding;
     flex-wrap: wrap;
     .ham-icon {
@@ -131,33 +130,31 @@
     }
     .adminlogo {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      .badge {
-        // position: relative;
-        i {
-          padding: 10px;
-          border-radius: 100%;
-          font-size: 20px;
-          color: $primary-color1;
-        }
-        span {
-          position: relative;
-          text-align: center;
-          inset: -15px 0 0px -20px;
-          background-color: rgb(241, 34, 34);
-          border-radius: 50%;
-          color: white;
-          font-size: 15px;
-        }
-      }
+      align-items: flex-start;
+      justify-content: space-between;
+      width: 200px;
       i {
-        padding: 10px;
+        // padding: 10px;
         border-radius: 100%;
-        font-size: 20px;
+        font-size: 22px;
         color: $primary-color1;
         border: 1px solid $primary-color1;
+        width: 35px;
+        height: 35px;
+        text-align: center;
       }
+      span {
+        position: relative;
+        text-align: center;
+        height: 20px;
+        width: 20px;
+        inset: -8px 0 0px -20px;
+        background-color: rgb(241, 34, 34);
+        border-radius: 50%;
+        color: white;
+        font-size: 15px;
+      }
+
       .admin-panel {
         display: flex;
         align-items: flex-start;

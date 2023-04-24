@@ -39,23 +39,21 @@ export const Dashboard = () => {
             </i>
           </div>
           <div className="adminlogo">
-            <div className="badge">
-              <i>
-                <BsBell />
-              </i>
-              <span>1</span>
-            </div>
+            <i>
+              <BsBell />
+            </i>
+            <span>1</span>
             <div className="admin-panel">
               <i>
                 <RiAdminFill />
               </i>
               <div className="admin-name">
                 <h4>Admin</h4>
-                <select name="admin">
-                  <option value="user">Admin</option>
+                {/* <select name="admin">
+                  <option value="user"></option>
                   <option value="profile">Profile</option>
-                  <option value="logout">LogOut</option>
-                </select>
+                  <option value="logout">Log out</option>
+                </select> */}
               </div>
             </div>
           </div>
