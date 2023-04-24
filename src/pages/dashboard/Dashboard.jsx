@@ -17,6 +17,7 @@ import {
   YAxis,
   BarChart,
   Bar,
+  ResponsiveContainer,
 } from "recharts";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -63,8 +64,9 @@ export const Dashboard = () => {
           {/* ........Charts.......... */}
           <div className="dashboard__charts">
             {/* .......LineChart.......... */}
-            <div className="dashboard__charts-linechart" key={productData.id}>
-              <LineChart width={400} height={250} data={productData}>
+
+            <ResponsiveContainer>
+              <LineChart data={productData}>
                 <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
                 <XAxis dataKey="title" />
                 <YAxis dataKey="stock" />
@@ -83,9 +85,10 @@ export const Dashboard = () => {
                   strokeWidth={3}
                 />
               </LineChart>
-            </div>
-            <div className="dashboard__charts-barchart" key={productData.id}>
-              <BarChart width={400} height={250} data={productData}>
+            </ResponsiveContainer>
+
+            <ResponsiveContainer>
+              <BarChart data={productData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="title" />
                 <YAxis dataKey="stock" />
@@ -94,7 +97,7 @@ export const Dashboard = () => {
                 <Bar dataKey="category" fill="#8884d8" />
                 <Bar dataKey="stock" fill="#82ca9d" />
               </BarChart>
-            </div>
+            </ResponsiveContainer>
           </div>
 
           {/*Users and product number listing */}
