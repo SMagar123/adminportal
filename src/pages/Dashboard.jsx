@@ -18,85 +18,45 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 export const Dashboard = () => {
   const productData = Data.products;
+
   return (
     <div className="dashboard">
-      {/* .......side-nav list......... */}
-      {/* <div className="dashboard__list">
-        <SideNav />
-      </div> */}
-      <div className="dashboard__body">
-        {/* .........header..........*/}
-        {/* <div className="dashboard__header active">
+      <div className="details">
+        <div className="dashboard__charts">
+          <ResponsiveContainer>
+            <LineChart data={productData}>
+              <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
+              <XAxis dataKey="title" />
+              <YAxis dataKey="stock" />
+              <Tooltip />
+              <Legend />
+              <Line
+                type="monotone"
+                dataKey="stock"
+                stroke="#8884d8"
+                strokeWidth={3}
+              />
+              <Line
+                type="monotone"
+                dataKey="discountPercentage"
+                stroke="#82ca9d"
+                strokeWidth={3}
+              />
+            </LineChart>
+          </ResponsiveContainer>
 
-          <div className="ham-icon">
-            <i>
-              <RxHamburgerMenu />
-            </i>
-          </div>          
-          <div className="adminlogo">
-            <div className="badge">
-              <i>
-                <BsBell />
-              </i>
-              <span>1</span>
-            </div>
-            <div className="admin-panel">
-              <i>
-                <RiAdminFill />
-              </i>
-              <div className="admin-name">
-                <h4>Admin</h4>
-                <select name="admin">
-                  <option value="user">Admin</option>
-                  <option value="profile">Profile</option>
-                  <option value="logout">LogOut</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div> */}
-        <div className="details">
-          {/* ........Charts.......... */}
-          <div className="dashboard__charts">
-            {/* .......LineChart.......... */}
-            {/* <div className="dashboard__charts-linechart" key={productData.id}> */}
-            <ResponsiveContainer>
-              <LineChart data={productData}>
-                <CartesianGrid stroke="#ccc" strokeDasharray="3 3" />
-                <XAxis dataKey="title" />
-                <YAxis dataKey="stock" />
-                <Tooltip />
-                <Legend />
-                <Line
-                  type="monotone"
-                  dataKey="stock"
-                  stroke="#8884d8"
-                  strokeWidth={3}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="discountPercentage"
-                  stroke="#82ca9d"
-                  strokeWidth={3}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-            {/* </div> */}
-            {/* <div className="dashboard__charts-barchart" key={productData.id}> */}
-            <ResponsiveContainer>
-              <BarChart data={productData}>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="title" />
-                <YAxis dataKey="stock" />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="category" fill="#8884d8" />
-                <Bar dataKey="stock" fill="#82ca9d" />
-              </BarChart>
-            </ResponsiveContainer>
-          </div>
+          <ResponsiveContainer>
+            <BarChart data={productData}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="title" />
+              <YAxis dataKey="stock" />
+              <Tooltip />
+              <Legend />
+              <Bar dataKey="category" fill="#8884d8" />
+              <Bar dataKey="stock" fill="#82ca9d" />
+            </BarChart>
+          </ResponsiveContainer>
         </div>
-        {/* </div> */}
         {/*Users and product number listing */}
         <div className="dashboard__userno">
           <div className="numbers">
@@ -128,7 +88,6 @@ export const Dashboard = () => {
           </div>
         </div>
 
-        {/* .....table......... */}
         <div className="dashboard__table">
           <table>
             <thead className="dasboard__table-head">
@@ -151,7 +110,6 @@ export const Dashboard = () => {
             </tbody>
           </table>
         </div>
-        {/* .......Calendar// Map.......... */}
         <div className="dashboard__extras">
           <Calendar />
           <div className="map">
