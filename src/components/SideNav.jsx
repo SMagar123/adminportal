@@ -4,7 +4,8 @@ import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
 import { BiDownArrow, BiHomeAlt } from "react-icons/bi";
 import { RiProductHuntFill } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
-import { Dashboard } from "../pages";
+import useToken from "../pages/UseToken/useToken";
+import Loginadmin from "../pages/Loginadmin";
 
 export const SideNav = () => {
   const navList = [
@@ -28,7 +29,12 @@ export const SideNav = () => {
   const toggleButton = () => {
     setShow(!show);
   };
-  // console.log(show);
+  const { token, setToken } = useToken();
+  if (!token) {
+    {
+      return <Loginadmin setToken={setToken} />;
+    }
+  }
   return (
     <>
       <div className="navbar">
@@ -37,16 +43,11 @@ export const SideNav = () => {
           <div className="logo">
             {/* <img src="" alt="logo" /> */}
             <h2>Admin Portal</h2>
-            <i onClick={() => toggleButton()}>
-              <BiDownArrow />
-            </i>
-            {show ? (
-              <input
-                type="text"
-                className="nav-filter"
-                placeholder="Filter Menu"
-              />
-            ) : null}
+            <input
+              type="text"
+              className="nav-filter"
+              placeholder="Filter Menu"
+            />
           </div>
           <ul>
             <li>
@@ -67,37 +68,29 @@ export const SideNav = () => {
         </div>
         {/* .....top-navbar...... */}
         <div className="dash-display">
-        <div className="navbar__header active">
-          <div className="ham-icon">
-            <i>
-              <RxHamburgerMenu />
-            </i>
-          </div>
-          <div className="adminlogo">
-            <div className="badge">
+          <div className="navbar__header active">
+            <div className="ham-icon">
+              <i>
+                <RxHamburgerMenu />
+              </i>
+            </div>
+            <div className="adminlogo">
               <i>
                 <BsBell />
               </i>
               <span>1</span>
-            </div>
-            <div className="admin-panel">
-              <i>
-                <RiAdminFill />
-              </i>
-              <div className="admin-name">
-                <h4>Admin</h4>
-                <select name="admin">
-                  <option value="user">Admin</option>
-                  <option value="profile">Profile</option>
-                  <option value="logout">LogOut</option>
-                </select>
+              <div className="admin-panel">
+                <i>
+                  <RiAdminFill />
+                </i>
+                <div className="admin-name">
+                  <h4>Admin</h4>
+                </div>
               </div>
             </div>
           </div>
+          <Outlet />
         </div>
-        <Outlet />
-        </div>
-       
       </div>
     </>
   );
