@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "../../assets/icons/Icons";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "../assets/icons/Icons";
 import { useNavigate, Navigate } from "react-router-dom";
 export const Login = ({ stateTrigger }) => {
   const [iconstate, setIconState] = useState(true);
@@ -7,12 +7,13 @@ export const Login = ({ stateTrigger }) => {
   const [adminuser, setAdminUser] = useState();
   const [adminpassword, setAdminPassword] = useState();
   const [inputType, setInputType] = useState("password");
-
+  
   //Setting the admin user and password in the localstorage as database
   // (() => {
-  //   localStorage.setItem("admin-user", "Swift-Tech-admin123");
-  //   localStorage.setItem("admin-password", "swiftTech@123");
-  // })();
+  //     localStorage.setItem("admin-user", "Swift-Tech-admin123");
+  //     localStorage.setItem("admin-password", "swiftTech@123");
+  //   })();
+ 
 
   const adminUser = useRef();
   const adminPassword = useRef();
@@ -39,25 +40,24 @@ export const Login = ({ stateTrigger }) => {
   }, []);
 
   const directAdmin = () => {
+    navigate("/Dashboard");
     if (
       adminUser.current.value === adminuser &&
       adminPassword.current.value === adminpassword
     ) {
       stateTrigger(true);
-      navigate("/dashboard");
+      navigate("/Dashboard");
     } else {
       alert("Wrong email and password");
       navigate("/");
     }
   };
-
   return (
     <div className="login">
       <div className="login__form">
-        <h3>Admin Login</h3>
+      <h3>Admin Login</h3>
         <form onSubmit={directAdmin}>
-          <input
-            type="text"
+          <input type="text"
             name="username"
             placeholder="Enter Username"
             ref={adminUser}
@@ -73,7 +73,6 @@ export const Login = ({ stateTrigger }) => {
             />
             <i onClick={handleIcon}>{icond}</i>
           </div>
-
           <button type="submit">Login</button>
         </form>
       </div>

@@ -11,8 +11,13 @@
 body {
   margin: auto;
   width: fit-content;
-  height: auto;
+  height: 100vh;
   font-family: "Lato", sans-serif;
+}
+.container{
+  max-width: $container-width;
+  padding: 10px $general-padding;
+
 }
 li, a{
     text-decoration: none;
