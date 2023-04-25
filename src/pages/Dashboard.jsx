@@ -21,27 +21,18 @@ export const Dashboard = () => {
   return (
     <div className="dashboard">
       {/* .......side-nav list......... */}
-      <div className="dashboard__list">
+      {/* <div className="dashboard__list">
         <SideNav />
-      </div>
+      </div> */}
       <div className="dashboard__body">
         {/* .........header..........*/}
-        <div className="dashboard__header active">
+        {/* <div className="dashboard__header active">
+
           <div className="ham-icon">
             <i>
               <RxHamburgerMenu />
             </i>
-          </div>
-          {/* <div className="search">
-            <input
-              type="text"
-              name="username"
-              placeholder="Search user by name"
-            />
-            <i>
-              <BiSearch />
-            </i>
-          </div> */}
+          </div>          
           <div className="adminlogo">
             <div className="badge">
               <i>
@@ -63,7 +54,7 @@ export const Dashboard = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="details">
           {/* ........Charts.......... */}
           <div className="dashboard__charts">

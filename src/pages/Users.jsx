@@ -1,12 +1,6 @@
-import React from 'react'
+import React from "react";
+import { SideNav } from "../components";
 
 export const Users = () => {
-  return (
-    <div>
-      <h1>Hello Users</h1>
-    </div>
-  )
+  return <div>Hello user</div>;
 };
-
-
-
