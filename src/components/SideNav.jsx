@@ -75,22 +75,27 @@ export const SideNav = () => {
               </i>
             </div>
             <div className="adminlogo">
+
               <i>
                 <BsBell />
               </i>
               <span>1</span>
+
               <div className="admin-panel">
                 <i>
                   <RiAdminFill />
                 </i>
                 <div className="admin-name">
                   <h4>Admin</h4>
+
+
                 </div>
               </div>
             </div>
           </div>
           <Outlet />
         </div>
+
       </div>
     </>
   );

@@ -1,0 +1,23 @@
+.user__wrapper{
+    border: 1px solid blue;
+    padding: $general-padding;
+    text-align: center;
+    .user__wrapper-header{
+        border: 1px solid red;
+        position: relative;
+        // display: flex;
+        // justify-content: space-between;
+        .header-title{
+            font-size: $font-size;
+            justify-content: center;            
+        }
+        .header-adduser{
+            display: flex;
+            justify-content: flex-end;
+            font-size: 28px;
+            margin-top: -36px;
+            border-radius: 50%;
+            padding: 20px;
+        }
+    }
+}
