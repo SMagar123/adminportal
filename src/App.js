@@ -7,30 +7,20 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.scss";
-import { Dashboard, Login } from "./pages";
-import { ProtectedRoute } from "./components";
-import { useEffect, useState } from "react";
+import { Dashboard, Loginadmin, Users, Product, Settings } from "./pages";
+import { SideNav } from "./components";
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
-  return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route index element={<Login stateTrigger={setLoggedIn} />} />
-          <Route
-            exact
-            path="/dashboard"
-            element={
-              <Dashboard />
-              // <ProtectedRoute isLoggedIn={isLoggedIn}>
-              //   <Dashboard />
-              // </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </div>
-    </BrowserRouter>
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<SideNav />}>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="Users" element={<Users />} />
+        <Route path="Product" element={<Product />} />
+        <Route path="Settings" element={<Settings />} />
+      </Route>
+    )
   );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
