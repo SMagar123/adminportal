@@ -64,10 +64,13 @@
         &:hover {
           background-color: $menu-item-hover;
           text-shadow: 0 0 2px $text-color;
-        }
+        }       
         a {
           margin: $general-margin;
           color: $text-color;
+          // &.active{
+
+          // }
         }
       }
     }
@@ -82,7 +85,7 @@
     justify-content: space-between;
     padding: $general-padding;
     gap: $general-gap;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     margin-bottom: $general-padding;
     flex-wrap: wrap;
 

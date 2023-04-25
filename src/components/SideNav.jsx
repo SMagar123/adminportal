@@ -67,35 +67,35 @@ export const SideNav = () => {
         </div>
         {/* .....top-navbar...... */}
         <div className="dash-display">
-        <div className="navbar__header active">
-          <div className="ham-icon">
-            <i>
-              <RxHamburgerMenu />
-            </i>
-          </div>
-          <div className="adminlogo">
-            <div className="badge">
+          <div className="navbar__header active">
+            <div className="ham-icon">
               <i>
-                <BsBell />
+                <RxHamburgerMenu />
               </i>
-              <span>1</span>
             </div>
-            <div className="admin-panel">
-              <i>
-                <RiAdminFill />
-              </i>
-              <div className="admin-name">
-                <h4>Admin</h4>
-                <select name="admin">
-                  <option value="user">Admin</option>
-                  <option value="profile">Profile</option>
-                  <option value="logout">LogOut</option>
-                </select>
+            <div className="adminlogo">
+              <div className="badge">
+                <i>
+                  <BsBell />
+                </i>
+                <span>1</span>
+              </div>
+              <div className="admin-panel">
+                <i>
+                  <RiAdminFill />
+                </i>
+                <div className="admin-name">
+                  <h4>Admin</h4>
+                  <select name="admin">
+                    <option value="user">Admin</option>
+                    <option value="profile">Profile</option>
+                    <option value="logout">LogOut</option>
+                  </select>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <Outlet />
+          <Outlet />
         </div>
        
       </div>
