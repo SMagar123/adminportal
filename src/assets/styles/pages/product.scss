@@ -1,0 +1,70 @@
+.product {
+//   border: 1px solid blue;
+  padding: $general-padding;
+  background-color: rgb(252, 252, 252);
+  .product__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-bottom: $general-padding;
+    gap: $general-gap;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: $primary-color1;
+      color: white;
+      outline: none;
+      border: none;
+      padding: 5px 15px;
+      transition: 250ms ease-in;
+      .addicon {
+        height: 20px;
+        i {
+          font-size: 15px;
+        }
+      }
+      &:hover {
+        background-color: #066399;
+      }
+    }
+  }
+  .product__search {
+    box-shadow: 0 0 2px gray;
+    padding: $general-padding;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: white;
+    .search-field {
+      text-align: start;
+      width: 300px;
+      input {
+        width: 100%;
+        font-size: 15px;
+        outline: none;
+        padding: 0px 5px;
+        border: 1px solid gray;
+      }
+      i {
+        font-size: 16px;
+        color: gray;
+      }
+    }
+    .filter-field {
+      select {
+        font-size: 15px;
+        padding: 0px 5px;
+        border-color: gray;
+        color: gray;
+        outline: none;
+      }
+    }
+  }
+  .product__display {
+    padding: $general-padding;
+    box-shadow: 0 0 2px gray;
+  }
+}
