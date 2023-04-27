@@ -2,44 +2,36 @@ import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import { AiFillStar, BiEdit, AiOutlineDelete } from "../assets/icons/Icons";
 import CategoryContext from "../pages/Product";
-export const SingleProduct = ({ limit }) => {
+import { getProducts } from "../service/api";
+export const SingleProduct = () => {
   const categoryType = useContext(CategoryContext);
   const [productList, setProductList] = useState([]);
-  //fetching all the product list up to 10 products
+
+  //fetching all the product list
   const getProductList = async () => {
-    try {
-      const { data } = await axios.get(
-        `https://dummyjson.com/products/?limit=${limit}`
-      );
-      setProductList(data.products);
-    } catch (e) {
-      console.log(e);
-    }
+    const products = await getProducts();
+    setProductList(products.data);
   };
   useEffect(() => {
     getProductList();
-  }, [limit]);
-  //fetch product list of the specific category
-  const categoryWiseProduct = async () => {
-    try {
-      if (categoryType === "") {
-        const { data } = await axios.get(
-          `https://dummyjson.com/products/?limit=${limit}`
-        );
-        setProductList(data.products);
-      } else {
-        const { data } = await axios.get(
-          `https://dummyjson.com/products/category/${categoryType}`
-        );
-        setProductList(data.products);
-      }
-    } catch (e) {
-      console.log(e);
+  }, []);
+  //fetching the products of specific category
+
+  const categoryWiseProduct = () => {
+    if (categoryType === "") {
+      setProductList(productList);
+    } else {
+      setProductList(
+        productList.filter((item) => {
+          return item.category === categoryType;
+        })
+      );
     }
   };
   useEffect(() => {
     categoryWiseProduct();
   }, [categoryType]);
+
   return (
     <div className="singleProduct">
       {productList.map((item) => {

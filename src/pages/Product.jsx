@@ -2,32 +2,30 @@ import React, { useState, createContext } from "react";
 import { AiOutlinePlus, BiSearch } from "../assets/icons/Icons";
 import { SingleProduct } from "../components/SingleProduct";
 import { AddProduct } from "../components/AddProduct";
+import { Link } from "react-router-dom";
 const CategoryContext = createContext();
 export const Product = () => {
   const [category, setCategory] = useState("");
-  const [addUser, setAddUser] = useState(false);
   const categorySelection = (e) => {
     e.preventDefault();
     setCategory(e.target.value);
   };
-  const setAddModalView = () => {
-    setAddUser(!addUser);
-  };
+
   return (
     <CategoryContext.Provider value={category}>
       <div className="product">
-        {addUser ? <AddProduct setModalView={setAddUser} /> : ""}
-
         <div className="product__header">
           <h3>Products</h3>
-          <button onClick={setAddModalView}>
-            <span className="addicon">
-              <i>
-                <AiOutlinePlus />
-              </i>
-            </span>
-            <span>Add New</span>
-          </button>
+          <Link to="/addproduct">
+            <button>
+              <span className="addicon">
+                <i>
+                  <AiOutlinePlus />
+                </i>
+              </span>
+              <span>Add New</span>
+            </button>
+          </Link>
         </div>
         <div className="product__search">
           <div className="search-field">
@@ -48,7 +46,7 @@ export const Product = () => {
           </div>
         </div>
         <div className="product__display">
-          <SingleProduct limit={20} />
+          <SingleProduct />
         </div>
       </div>
     </CategoryContext.Provider>

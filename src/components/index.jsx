@@ -1,3 +1,4 @@
 import { SideNav } from "./SideNav";
 import { ProtectedRoute } from "./ProtectedRoute";
-export { SideNav, ProtectedRoute };
+import { AddProduct } from "./AddProduct";
+export { SideNav, ProtectedRoute, AddProduct };

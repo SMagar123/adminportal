@@ -1,9 +1,9 @@
 .addproduct {
   //   border: 1px solid black;
-  height: 100vh;
-  position: absolute;
+  height: 120vh;
+  // position: absolute;
   width: 902px;
-  background-color: rgba(128, 128, 128, 0.863);
+  background-color: rgba(128, 128, 128, 0.212);
   z-index: 99;
 
   display: flex;
@@ -32,6 +32,35 @@
           padding: 5px;
           outline-color: $primary-color1;
         }
+      }
+      .form-image {
+        display: flex;
+        flex-direction: column;
+
+        // .mainimage,
+        // .thumbnail {
+        //   // color: transparent;
+        //   width: 110px;
+        //   outline: none;
+        //   &::-webkit-file-upload-button {
+        //     visibility: hidden;
+        //   }
+        //   &::before {
+        //     content: "Select image";
+        //     color: black;
+        //     cursor: pointer;
+        //     border: 1px solid gray;
+        //     padding: 0 10px;
+        //     color: white;
+        //     background-color: rgb(9, 139, 133);
+        //   }
+        // }
+        // .thumbnail {
+        //   width: 160px;
+        //   &::before {
+        //     content: "Select thumbnail";
+        //   }
+        // }
       }
       .form-submit {
         display: flex;
