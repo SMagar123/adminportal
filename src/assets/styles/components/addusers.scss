@@ -1,0 +1,62 @@
+.adduser__wrapper{
+    padding: $general-padding;
+    margin: auto;
+    max-width: 450px;
+    .adduser__title{
+       border-radius: 4px;
+       color: $text-color;
+       background-color: $primary-color1;
+       text-align: center;
+       text-transform: uppercase;
+    }
+    .adduser__form{
+        box-shadow: 0 0.15rem 1.75rem rgb(33,40,50,0.15) ;
+        padding: $general-padding;   
+        // text-align: center;
+        .form-detail{
+            gap: $general-gap; 
+            padding: 10px 12px;
+            margin-bottom: 10px;
+            label{
+                display: block;
+                color: $body-text-color;
+                margin-right: 10px;
+                font-size: $font-size;
+                input{
+                    width: 100%;
+                    border-radius: 10px;
+                    padding: 10px;
+                }
+            }
+        }
+
+    }
+    .submit{            
+        display: flex;
+        justify-content: space-evenly;
+        .add{
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+            transition: $transition-speed ease-out; 
+            font-size: $font-size;
+            &:hover{
+                background-color: green;
+                text-shadow: 0 0 2px;
+
+            }           
+        }
+        .cancel{
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+            transition: $transition-speed ease-out; 
+            font-size: $font-size;
+            &:hover{
+                background-color: rgb(248, 115, 115);
+                text-shadow: 0 0 2px;
+
+            }
+        }
+    }
+}

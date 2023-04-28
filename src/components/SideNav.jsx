@@ -43,11 +43,11 @@ export const SideNav = () => {
           <div className="logo">
             {/* <img src="" alt="logo" /> */}
             <h2>Admin Portal</h2>
-            <input
+            {/* <input
               type="text"
               className="nav-filter"
               placeholder="Filter Menu"
-            />
+            /> */}
           </div>
           <ul>
             <li>
