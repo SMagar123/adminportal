@@ -14,3 +14,11 @@ export const getProducts = async () => {
     console.error(error);
   }
 };
+
+export const deleteProduct = async (id) => {
+  try {
+    return await axios.delete(`${ProductAPI_URL}/${id}`);
+  } catch (e) {
+    console.log("Error deleting user", e.message);
+  }
+};

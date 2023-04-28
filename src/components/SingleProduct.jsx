@@ -1,16 +1,18 @@
-import axios from "axios";
 import React, { useEffect, useState, useContext } from "react";
 import { AiFillStar, BiEdit, AiOutlineDelete } from "../assets/icons/Icons";
 import CategoryContext from "../pages/Product";
-import { getProducts } from "../service/api";
+import { deleteProduct, getProducts } from "../service/api";
+import { convertNeSwToNwSe } from "google-map-react";
 export const SingleProduct = () => {
   const categoryType = useContext(CategoryContext);
   const [productList, setProductList] = useState([]);
+  const [originalList, setOriginalList] = useState([]);
 
   //fetching all the product list
   const getProductList = async () => {
     const products = await getProducts();
     setProductList(products.data);
+    setOriginalList(products.data);
   };
   useEffect(() => {
     getProductList();
@@ -18,23 +20,34 @@ export const SingleProduct = () => {
   //fetching the products of specific category
 
   const categoryWiseProduct = () => {
-    if (categoryType === "") {
-      setProductList(productList);
+    if (categoryType.category === "") {
+      setOriginalList(productList);
     } else {
-      setProductList(
+      setOriginalList(
         productList.filter((item) => {
-          return item.category === categoryType;
+          return item.category === categoryType.category;
         })
       );
     }
   };
   useEffect(() => {
     categoryWiseProduct();
-  }, [categoryType]);
-
+  }, [categoryType.category]);
+  //deleting the single product
+  const deleteSingleProduct = async (product_id) => {
+    alert(`Do you want to delete product ${product_id}`);
+    await deleteProduct(product_id);
+    getProductList();
+  };
+  //searching the product
+  const searchProduct = () => {
+    return originalList.filter((item) => {
+      return item.title.toLowerCase().includes(categoryType.searchProduct);
+    });
+  };
   return (
     <div className="singleProduct">
-      {productList.map((item) => {
+      {searchProduct().map((item) => {
         return (
           <div className="individual-product" key={item.id}>
             <div className="image">
@@ -61,7 +74,7 @@ export const SingleProduct = () => {
                 </i>
                 Edit
               </button>
-              <button>
+              <button onClick={() => deleteSingleProduct(item.id)}>
                 <i>
                   <AiOutlineDelete />
                 </i>
