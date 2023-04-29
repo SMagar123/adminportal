@@ -11,7 +11,7 @@ const initialProuct = {
   brand: "",
   category: "",
   thumbnail: "",
-  images: "",
+  images: [],
 };
 const formField = [
   "Title",
@@ -23,11 +23,19 @@ const formField = [
   "Category",
 ];
 export const AddProduct = () => {
-  const [addedProduct, setAddedProduct] = useState(initialProuct);
   const navigate = useNavigate();
+  const [addedProduct, setAddedProduct] = useState(initialProuct);
 
   const handleAddingProduct = (e) => {
     setAddedProduct({ ...addedProduct, [e.target.name]: e.target.value });
+  };
+  const handleAddingThumbnail = (e) => {
+    console.log(e.target.files);
+    console.log(e.target.files[0].name);
+    addedProduct.thumbnail = e.target.files[0].name;
+  };
+  const handleAddingImage = (e) => {
+    addedProduct.images.push(`images/${e.target.files[0].name}`);
   };
   const addProduct = async () => {
     await addProductList(addedProduct);
@@ -68,7 +76,8 @@ export const AddProduct = () => {
               name="thumbnail"
               accept="image/png, image/jpeg"
               className="thumbnail"
-              onChange={(e) => handleAddingProduct(e)}
+              // onChange={(e) => handleAddingProduct(e)}
+              onChange={(e) => handleAddingThumbnail(e)}
             />
             <label htmlFor="image">Image</label>
             <input
@@ -76,7 +85,7 @@ export const AddProduct = () => {
               name="images"
               accept="image/png, image/jpeg"
               className="mainimage"
-              onChange={(e) => handleAddingProduct(e)}
+              onChange={(e) => handleAddingImage(e)}
             />
           </div>
           <div className="form-submit">

@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
+
 import { AiFillStar, BiEdit, AiOutlineDelete } from "../assets/icons/Icons";
 import CategoryContext from "../pages/Product";
 import { deleteProduct, getProducts } from "../service/api";
-import { convertNeSwToNwSe } from "google-map-react";
 export const SingleProduct = () => {
   const categoryType = useContext(CategoryContext);
   const [productList, setProductList] = useState([]);
@@ -34,10 +34,10 @@ export const SingleProduct = () => {
     categoryWiseProduct();
   }, [categoryType.category]);
   //deleting the single product
-  const deleteSingleProduct = async (product_id) => {
-    alert(`Do you want to delete product ${product_id}`);
-    await deleteProduct(product_id);
-    getProductList();
+  const deleteSingleProduct = async (product_id, product_title) => {
+    window.confirm(`Do you want to delete product ${product_title}`)
+      ? (await deleteProduct(product_id)) && getProductList()
+      : console.log("NOT DELETED");
   };
   //searching the product
   const searchProduct = () => {
@@ -45,6 +45,7 @@ export const SingleProduct = () => {
       return item.title.toLowerCase().includes(categoryType.searchProduct);
     });
   };
+
   return (
     <div className="singleProduct">
       {searchProduct().map((item) => {
@@ -74,7 +75,7 @@ export const SingleProduct = () => {
                 </i>
                 Edit
               </button>
-              <button onClick={() => deleteSingleProduct(item.id)}>
+              <button onClick={() => deleteSingleProduct(item.id, item.title)}>
                 <i>
                   <AiOutlineDelete />
                 </i>
@@ -84,6 +85,32 @@ export const SingleProduct = () => {
           </div>
         );
       })}
+
+      {/* <h1>Upload and Display Image usign React Hook's</h1>
+
+      {selectedImage && (
+        <div>
+          <img
+            alt="not found"
+            width={"250px"}
+            src={URL.createObjectURL(selectedImage)}
+          />
+          <br />
+          <button onClick={() => setSelectedImage(null)}>Remove</button>
+        </div>
+      )}
+
+      <br />
+      <br />
+
+      <input
+        type="file"
+        name="myImage"
+        onChange={(event) => {
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+      /> */}
     </div>
   );
 };
