@@ -1,35 +1,34 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {Link} from "react-router-dom"
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-export const AddUsers = () => {  
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+export const AddUsers = () => {
   const userData = {
-    fname: "",
-    lname: "",
+    firstName: "",
+    lastName: "",
     email: "",
-    number: "",
+    phone: "",
   };
   const [inputarr, setInputArr] = useState(userData);
   const handleUserInput = (e) => {
     setInputArr({ ...inputarr, [e.target.name]: e.target.value });
   };
-  const data="http://localhost:3006/users";
-  const addUserDetails = async() => {
-    const request = {
-      ...data
-    };
-    const response= await axios.post(data, inputarr);
-     try {      
-        return( 
-          toast.success("User Added !", {
-            position: toast.POSITION.TOP_CENTER
-          }),
-          await axios.post(data, inputarr)
-          );
-        } catch (e) {
-          console.log("Error while ", e.message);         
-      }
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post(`http://127.0.0.1:3005/users`, inputarr);
+    // .then(res=>{
+    //   toast.success("User Added !", {
+    //     position: toast.POSITION.TOP_CENTER
+    //   })
+    navigate("/Users");
+    notify();
+  };
+  const notify = () => {
+    toast.success("User Added !", {
+      position: toast.POSITION.TOP_CENTER,
+    });
   };
 
   return (
@@ -38,27 +37,27 @@ export const AddUsers = () => {
         <h2>Add Users</h2>
       </div>
       <div className="adduser__form">
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* <div className="form-detail">
             <label className="id">ID</label>
             <input type="number" onChange={(e) => handleUserInput(e)} />
           </div> */}
           <div className="form-detail">
-            <label className="fname">First Name:</label>
+            <label className="firstName">First Name:</label>
             <input
               type="name"
               placeholder="Add First Name"
               onChange={(e) => handleUserInput(e)}
-              name="fname"
+              name="firstName"
             />
           </div>
           <div className="form-detail">
-            <label className="lname">Last Name:</label>
+            <label className="lastName">Last Name:</label>
             <input
               type="name"
               placeholder="Add Last Name"
               onChange={(e) => handleUserInput(e)}
-              name='lname'
+              name="lastName"
             />
           </div>
           <div className="form-detail">
@@ -67,7 +66,7 @@ export const AddUsers = () => {
               type="email"
               placeholder="Add Email"
               onChange={(e) => handleUserInput(e)}
-              name='email'
+              name="email"
             />
           </div>
           <div className="form-detail">
@@ -80,13 +79,14 @@ export const AddUsers = () => {
             />
           </div>
           <div className="submit">
-            <button className="add" onClick={addUserDetails}>Add Users
-              <ToastContainer />
-            </button>
-            <Link to='/Users'><button className="cancel">Cancel</button></Link>
+            <button className="add">Add Users</button>
+            <Link to="/Users">
+              <button className="cancel">Cancel</button>
+            </Link>
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };
