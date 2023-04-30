@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-
 import { AiFillStar, BiEdit, AiOutlineDelete } from "../assets/icons/Icons";
 import CategoryContext from "../pages/Product";
 import { deleteProduct, getProducts } from "../service/api";
+import { Link } from "react-router-dom";
 export const SingleProduct = () => {
   const categoryType = useContext(CategoryContext);
   const [productList, setProductList] = useState([]);
@@ -69,12 +69,15 @@ export const SingleProduct = () => {
               </p>
             </div>
             <div className="product-edit">
-              <button>
-                <i>
-                  <BiEdit />
-                </i>
-                Edit
-              </button>
+              <Link to={`/edit/${item.id}`}>
+                <button>
+                  <i>
+                    <BiEdit />
+                  </i>
+                  Edit
+                </button>
+              </Link>
+
               <button onClick={() => deleteSingleProduct(item.id, item.title)}>
                 <i>
                   <AiOutlineDelete />

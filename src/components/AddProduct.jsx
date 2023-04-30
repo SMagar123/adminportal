@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addProductList } from "../service/api";
+import { ToastContainer, toast } from "react-toastify";
 const initialProuct = {
   title: "",
   description: "",
@@ -30,18 +31,30 @@ export const AddProduct = () => {
     setAddedProduct({ ...addedProduct, [e.target.name]: e.target.value });
   };
   const handleAddingThumbnail = (e) => {
-    console.log(e.target.files);
-    console.log(e.target.files[0].name);
     addedProduct.thumbnail = e.target.files[0].name;
   };
   const handleAddingImage = (e) => {
     addedProduct.images.push(`images/${e.target.files[0].name}`);
   };
-  const addProduct = async () => {
-    await addProductList(addedProduct);
+  const addProduct = () => {
+    addProductList(addedProduct);
+    notify();
     navigate("/Product");
   };
-  console.log(addedProduct);
+  const notify = () => {
+    toast.success("Product added successfully", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
+  // console.log(addedProduct);
   return (
     <div className="addproduct">
       <div className="addproduct__form">
@@ -93,6 +106,7 @@ export const AddProduct = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

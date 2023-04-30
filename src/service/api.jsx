@@ -22,3 +22,19 @@ export const deleteProduct = async (id) => {
     console.log("Error deleting user", e.message);
   }
 };
+
+export const getSingleProduct= async (data) => {
+  try {
+    return await axios.get(`${ProductAPI_URL}/${data}`);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const editProductDetail = async (data, id) => {
+  try {
+    return await axios.put(`${ProductAPI_URL}/${id}`, data);
+  } catch (e) {
+    console.log("Error while ", e.message);
+  }
+};

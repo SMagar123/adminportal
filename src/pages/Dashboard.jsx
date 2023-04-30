@@ -1,7 +1,7 @@
 import React from "react";
 import { SideNav } from "../components";
 import { RxHamburgerMenu, BsBell, RiAdminFill } from "../assets/icons/Icons";
-import Data from "../productdata.json";
+import Data from "../database/productdb.json";
 import {
   CartesianGrid,
   Legend,

@@ -82,12 +82,13 @@
     justify-content: space-between;
     padding: $general-padding;
     gap: $general-gap;
-    border: 1px solid blue;
+    // border: 1px solid blue;
     margin-bottom: $general-padding;
     flex-wrap: wrap;
 
     .ham-icon {
       text-align: center;
+      padding: 2px;
       i {
         color: $primary-color1;
         font-size: 20px;
@@ -98,27 +99,12 @@
         cursor: pointer;
       }
     }
-    .search {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 5px $general-padding;
-      input {
-        font-size: $font-size;
-        padding: 5px $general-padding;
-        outline: none;
-        border: none;
-        border-bottom: 1px solid $primary-color1;
-      }
-      i {
-        font-size: 20px;
-        color: $primary-color1;
-      }
-    }
+
     .adminlogo {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
+      padding: 2px;
       i {
         border-radius: 100%;
         font-size: 20px;
@@ -127,6 +113,7 @@
         width: 35px;
         border: 1px solid $primary-color1;
         text-align: center;
+        padding: 4px;
       }
       span {
         position: relative;
@@ -144,6 +131,8 @@
         align-items: center;
         justify-content: space-between;
         width: 150px;
+        padding: 2px;
+        cursor: pointer;
         .admin-name {
           padding: 0px $general-padding;
           h4 {
@@ -153,6 +142,43 @@
             border: none;
             outline: none;
             color: #777777;
+          }
+        }
+        .admin-functionalities {
+          // border: 1px solid #777777;
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          width: 150px;
+          top: 65px;
+          display: none;
+          a {
+            background-color: $primary-color1;
+            outline: none;
+            text-align: center;
+            color: white;
+            transition: 250ms ease;
+            padding: 8px 15px;
+            &:hover {
+              color: black;
+              background-color: lighten($color: $primary-color1, $amount: 30%);
+            }
+            &:nth-child(2) {
+              button {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        &:hover {
+          .admin-functionalities {
+            display: flex;
+            z-index: 1;
           }
         }
       }

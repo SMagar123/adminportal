@@ -1,35 +1,41 @@
-import { RxHamburgerMenu, BsBell, RiAdminFill } from "../assets/icons/Icons";
 import React, { useEffect, useState } from "react";
-import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
-import { BiDownArrow, BiHomeAlt } from "react-icons/bi";
-import { RiProductHuntFill } from "react-icons/ri";
-import { NavLink, Outlet } from "react-router-dom";
+import {
+  AiOutlineUser,
+  AiOutlineSetting,
+  BiDownArrow,
+  BiHomeAlt,
+  RiProductHuntFill,
+  RxHamburgerMenu,
+  BsBell,
+  RiAdminFill,
+} from "../assets/icons/Icons";
+import { NavLink, Outlet, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useToken from "../pages/UseToken/useToken";
 import Loginadmin from "../pages/Loginadmin";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+const navList = [
+  {
+    nav: "Users",
+    path: "/Users",
+    icon: <AiOutlineUser />,
+  },
+  {
+    nav: "Product",
+    path: "/Product",
+    icon: <RiProductHuntFill />,
+  },
+  {
+    nav: "Settings",
+    path: "/Settings",
+    icon: <AiOutlineSetting />,
+  },
+];
 export const SideNav = () => {
-  const navList = [
-    {
-      nav: "Users",
-      path: "/Users",
-      icon: <AiOutlineUser />,
-    },
-    {
-      nav: "Product",
-      path: "/Product",
-      icon: <RiProductHuntFill />,
-    },
-    {
-      nav: "Settings",
-      path: "/Settings",
-      icon: <AiOutlineSetting />,
-    },
-  ];
-
   const { token, setToken } = useToken();
   const notifySuccess = () => {
-    toast.success("You are logged in successfully", {
+    toast.success("You are logged out successfully", {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -37,9 +43,21 @@ export const SideNav = () => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "colored",
+      theme: "dark",
     });
   };
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    window.confirm("Are you sure to logout")
+      ? getLoggeout()
+      : console.log("You are not logged out");
+  };
+  function getLoggeout() {
+    sessionStorage.clear();
+    window.location.reload();
+    // navigate("/");
+    notifySuccess();
+  }
   if (!token) {
     return <Loginadmin setToken={setToken} />;
   } else {
@@ -93,6 +111,12 @@ export const SideNav = () => {
                   </i>
                   <div className="admin-name">
                     <h4>Admin</h4>
+                  </div>
+                  <div className="admin-functionalities">
+                    <Link>Profile</Link>
+                    <Link>
+                      <button onClick={handleLogout}>Logout</button>
+                    </Link>
                   </div>
                 </div>
               </div>
