@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export const SearchUsers = () => {
+export const SearchUsers = ({onClose}) => {
   return (
     <div className='search__filter'>
         <div className="search__filter-detail">
@@ -19,7 +19,7 @@ export const SearchUsers = () => {
             <label>Phone number</label>
             <input type="number" />
         </div>   
-        <button>Filter</button>
+        <button onClick={onClose}>Filter</button>
     </div>
   )
 };

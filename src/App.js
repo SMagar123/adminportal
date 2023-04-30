@@ -5,9 +5,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import "./App.scss";
-import { Dashboard, Users, Product, Settings } from "./pages";
-import { SideNav , AddUsers} from "./components";
-import { EditUsers } from "./components/EditUsers";
+import { Dashboard, Users, AddUsers,EditUsers, Product, Settings } from "./pages";
+import { SideNav } from "./components";
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(

@@ -1,7 +1,41 @@
 .user__wrapper{
-    // border: 1px solid blue;
     padding: $general-padding;
     text-align: center;
+    .header-search{
+        // background-color: #e07f7fc0;
+        padding: $general-padding;
+        width: 500px;
+        margin:10px auto;
+        display: flex;
+        .search__filter{
+            margin: auto;
+            .search__filter-detail{
+                margin-bottom: 10px;
+                label{
+                    // text-align: right;
+                    // clear: both;
+                    // float:left;
+                    margin: 0 15px;
+                }
+                input{
+                    outline: none;
+                    clear: both;
+                    float:right;
+                    border-radius: 7px;
+                    // width: 45%;
+                }
+            }
+        
+            button{                           
+                padding: 10px 15px;
+                font-size: 16px;
+                transition:$transition-speed ease;
+                background-color: rgb(250, 250, 225);
+                cursor: pointer;
+                margin: 10px auto;
+            }
+    }
+    }
     .user__wrapper-header{
         display: flex;
         justify-content: space-between;
