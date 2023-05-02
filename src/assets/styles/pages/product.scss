@@ -1,6 +1,6 @@
 .product {
-//   border: 1px solid blue;
-  padding: $general-padding;
+  //   border: 1px solid blue;
+  padding: 0px $general-padding 0px $general-padding;
   background-color: rgb(252, 252, 252);
   .product__header {
     display: flex;
@@ -66,5 +66,45 @@
   .product__display {
     padding: $general-padding;
     box-shadow: 0 0 2px gray;
+  }
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // border: 1px solid black;
+    nav {
+      padding: 10px 0px 2px 0px;
+
+      ul {
+        display: flex;
+        // gap: 8px;
+        .previous,
+        .next {
+          background-color: lighten($color: $primary-color1, $amount: 10);
+          padding: 5px 10px;
+          transition: 250ms ease;
+          a {
+            i {
+              color: white;
+            }
+          }
+          &:hover {
+            background-color: lighten($color: $primary-color1, $amount: 0);
+          }
+        }
+        .page-item {
+          background-color: lighten($color: $primary-color1, $amount: 20);
+          padding: 5px 10px;
+          a {
+            color: white;
+          }
+        }
+        .active {
+          a {
+            color: black;
+          }
+        }
+      }
+    }
   }
 }

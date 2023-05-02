@@ -8,6 +8,7 @@ import {
   RxHamburgerMenu,
   BsBell,
   RiAdminFill,
+  RxCross1,
 } from "../assets/icons/Icons";
 import { NavLink, Outlet, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -34,6 +35,8 @@ const navList = [
 ];
 export const SideNav = () => {
   const { token, setToken } = useToken();
+  const [displayNav, setDisplayNav] = useState(true);
+  const [displayModel, setDisplayModel] = useState(true);
   const notifySuccess = () => {
     toast.success("You are logged out successfully", {
       position: "top-right",
@@ -58,14 +61,22 @@ export const SideNav = () => {
     // navigate("/");
     notifySuccess();
   }
+  const handleUserModel = () => {
+    setDisplayModel(!displayModel);
+  };
   if (!token) {
     return <Loginadmin setToken={setToken} />;
   } else {
     // notifySuccess();
     return (
       <>
-        <div className="navbar">
-          <div className="navbar__sidebar">
+        <div className={` ${displayNav ? "navbar" : "display-certain"}`}>
+          <div
+            className={`navbar__sidebar ${
+              displayNav ? "active-sidenav" : "inactive-sidenav"
+            }
+            `}
+          >
             <div className="logo">
               {/* <img src="" alt="logo" /> */}
               <h2>Admin Portal</h2>
@@ -95,7 +106,10 @@ export const SideNav = () => {
           {/* .....top-navbar...... */}
           <div className="dash-display">
             <div className="navbar__header active">
-              <div className="ham-icon">
+              <div
+                className="ham-icon"
+                onClick={() => setDisplayNav(!displayNav)}
+              >
                 <i>
                   <RxHamburgerMenu />
                 </i>
@@ -110,19 +124,41 @@ export const SideNav = () => {
                     <RiAdminFill />
                   </i>
                   <div className="admin-name">
-                    <h4>Admin</h4>
+                    <p>Admin</p>
                   </div>
                   <div className="admin-functionalities">
-                    <Link>Profile</Link>
+                    <Link>
+                      <button onClick={handleUserModel}>Profile</button>
+                    </Link>
                     <Link>
                       <button onClick={handleLogout}>Logout</button>
                     </Link>
                   </div>
                 </div>
               </div>
+              <div
+                className={`${
+                  displayModel ? "display-model" : "adminprofile-model"
+                }`}
+              >
+                <div className="model-canel">
+                  <i onClick={handleUserModel}>
+                    <RxCross1 />
+                  </i>
+                </div>
+
+                <div className="admin-profile">
+                  <i>
+                    <AiOutlineUser />
+                  </i>
+                  <h5>Swift-admin</h5>
+                  <p>swiftadmin@gmail.com</p>
+                </div>
+              </div>
             </div>
             <Outlet />
           </div>
+
           <ToastContainer />
         </div>
       </>

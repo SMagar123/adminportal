@@ -26,15 +26,30 @@ const formField = [
 export const AddProduct = () => {
   const navigate = useNavigate();
   const [addedProduct, setAddedProduct] = useState(initialProuct);
-
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedThumbnail, setSelectedThumbnail] = useState(null);
   const handleAddingProduct = (e) => {
     setAddedProduct({ ...addedProduct, [e.target.name]: e.target.value });
   };
   const handleAddingThumbnail = (e) => {
-    addedProduct.thumbnail = e.target.files[0].name;
+    if (e.target.files.length !== 0) {
+      setSelectedThumbnail(e.target.files[0]);
+      addedProduct.thumbnail = e.target.files[0].name;
+    }
   };
   const handleAddingImage = (e) => {
-    addedProduct.images.push(`images/${e.target.files[0].name}`);
+    if (e.target.files.length !== 0) {
+      setSelectedImage(e.target.files[0]);
+      addedProduct.images.push(`images/${e.target.files[0].name}`);
+    }
+  };
+  const cancelImageUpdate = () => {
+    setSelectedImage(null);
+    addedProduct.images.pop();
+  };
+  const cancelThumbnailUpdate = () => {
+    setSelectedThumbnail(null);
+    addedProduct.thumbnail = "";
   };
   const addProduct = () => {
     addProductList(addedProduct);
@@ -54,7 +69,7 @@ export const AddProduct = () => {
     });
   };
 
-  // console.log(addedProduct);
+  console.log(addedProduct);
   return (
     <div className="addproduct">
       <div className="addproduct__form">
@@ -69,6 +84,7 @@ export const AddProduct = () => {
                   onChange={(e) => handleAddingProduct(e)}
                   placeholder={`Enter ${item} `}
                   name={`${item.toLowerCase()}`}
+                  required
                 />
               </div>
             );
@@ -80,6 +96,7 @@ export const AddProduct = () => {
               onChange={(e) => handleAddingProduct(e)}
               placeholder="Enter discount %"
               name="discountPercentage"
+              required
             />
           </div>
           <div className="form-image">
@@ -87,26 +104,67 @@ export const AddProduct = () => {
             <input
               type="file"
               name="thumbnail"
-              accept="image/png, image/jpeg"
+              accept="image/*"
               className="thumbnail"
-              // onChange={(e) => handleAddingProduct(e)}
               onChange={(e) => handleAddingThumbnail(e)}
+              required
             />
+            {selectedThumbnail && (
+              <div className="preview-image">
+                <img
+                  alt="not found"
+                  src={URL.createObjectURL(selectedThumbnail)}
+                />
+                <button onClick={cancelThumbnailUpdate}>Change</button>
+              </div>
+            )}
             <label htmlFor="image">Image</label>
             <input
               type="file"
               name="images"
-              accept="image/png, image/jpeg"
+              accept="image/*"
               className="mainimage"
               onChange={(e) => handleAddingImage(e)}
+              required
             />
           </div>
+          {selectedImage && (
+            <div className="preview-image">
+              <img alt="not found" src={URL.createObjectURL(selectedImage)} />
+              <button onClick={cancelImageUpdate}>Change</button>
+            </div>
+          )}
           <div className="form-submit">
             <button type="submit">Add Product</button>
           </div>
         </form>
       </div>
       <ToastContainer />
+      {/* <h1>Upload and Display Image usign React Hook's</h1>
+
+      {selectedImage && (
+        <div>
+          <img
+            alt="not found"
+            width={"250px"}
+            src={URL.createObjectURL(selectedImage)}
+          />
+          <br />
+          <button onClick={() => setSelectedImage(null)}>Remove</button>
+        </div>
+      )}
+
+      <br />
+      <br />
+
+      <input
+        type="file"
+        name="myImage"
+        onChange={(event) => {
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+      /> */}
     </div>
   );
 };
