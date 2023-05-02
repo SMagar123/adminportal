@@ -6,7 +6,7 @@
         margin: 10px;         
             .search__filter-detail{ 
                 input{
-                    gap: 12px;
+                    margin-right: 10px;
                     border-radius: 4px;
                     padding: 6px;                    
                 }
@@ -54,35 +54,36 @@
     }
     .user__wrapper-table{
         padding: $general-padding;    
-        box-shadow: 0 0.15rem 1.75rem rgb(33,40,50,0.15);        
+        box-shadow: 0 0.15rem 1.75rem rgb(33,40,50,0.15);  
+        text-align: left;      
         .table-title{
             display: grid;
-            align-items: center;
-            font-size: $font-size;
+             font-size: $font-size;
             padding: 10px;
             border-bottom: 1px solid rgb(155, 155, 155);
-            grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+            grid-template-columns: repeat(auto-fill,minmax(141px,1fr));
         }
         .table-item{
             display: grid;
-            align-items: left;
             padding: $general-padding;
             font-weight: 300;
             color: $search-bar-color;
             border-bottom: 1px solid rgb(216, 216, 216);
-            grid-gap: 16px;
-            grid-template-columns: repeat(auto-fit,minmax(50px,1fr));
+            grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
             &:nth-child(odd){
                 background-color: rgba(235, 235, 235, 0.767);
             }           
-           .action{
-            i{
-                font-size: 20px;
-                cursor: pointer;               
+            
+            .action{
+                .action-box{
+                    display: flex;
+                    justify-content: center;
+                    gap: $general-gap;
+                    button{
+                        font-size: $font-size;
+                }
             }
-           }         
-            
-            
+           }               
         }
     
     }

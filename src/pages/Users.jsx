@@ -20,15 +20,21 @@ const filterIndex = {
 };
 export const Users = () => {
   const [userList, setUserList] = useState([]);
-  const [userFiltered, setUserFiltered] = useState([]);
+  const [userFiltered, setUserFiltered] = useState([]);;
+  const [currentPage, setCurrentPage]=useState(1)
   const [search, setSearch] = useState(filterIndex);
   // const [showModal,setShowModal]=useState([false]);
+  const [todoPerPage,setTodoPerPage]=useState(10);
+  const numOfTotalPages=Math.ceil(userList.length/todoPerPage);
+  const pages=[...Array(numOfTotalPages+1).keys()].slice(1);
+  const indexofLastTodo= currentPage+ todoPerPage;
+  const indexofFirstTodo
   const getUserList = async () => {
     try {
       const { data } = await axios.get(`http://127.0.0.1:3005/users`);
       setUserList(data);  
       setUserFiltered(data);
-      console.log(data);
+      // console.log(data);
     } catch (e) {
       console.error(e);
     }
@@ -69,8 +75,7 @@ export const Users = () => {
     <div className="user__wrapper"> 
      
       {/* .....header....... */}
-      <div className="user__wrapper-header">
-        
+      <div className="user__wrapper-header">        
         <div className="header-title">
           <h2>Users List</h2>
         </div>      
@@ -137,7 +142,6 @@ export const Users = () => {
                     </Link>
                     <button onClick={e=>handleDelete(d.id)}>
                       <RiDeleteBin5Line />
-
                     </button>
                   </div>
                 </div>
@@ -146,6 +150,15 @@ export const Users = () => {
           })}
         </div>
       </div>
+
+      <p>
+        {pages.map((page)=>{
+          return(
+            <span key={page}>{`$(pages) |`}</span>
+
+          )
+        })}
+      </p>
     </div>
   );
 };
