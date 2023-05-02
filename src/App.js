@@ -17,7 +17,7 @@ function App() {
         <Route path="EditUsers/:id" element={<EditUsers />} />  
         <Route path="Product" element={<Product />} />
         <Route path="Settings" element={<Settings />} />
-      </Route>
+      </Route>      
     )
   );
   return <RouterProvider router={router} />;

@@ -63,7 +63,7 @@
     },
     {
       "id": 3,
-      "firstName": "Terrill",
+      "firstName": "Terrill 321",
       "lastName": "Hills",
       "maidenName": "Hoeger",
       "age": 38,
@@ -550,20 +550,6 @@
       "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.6 Safari/537.11"
     },
     {
-      "fname": "hgjf",
-      "lname": "`kjfh",
-      "email": "jgshfd@gmail.com",
-      "number": "9854620123",
-      "id": 12
-    },
-    {
-      "fname": "Smriti",
-      "lname": "shrestha",
-      "email": "jsdghfj@gmail.com",
-      "number": "985412675284",
-      "id": 15
-    },
-    {
       "firstName": "Smriti",
       "lastName": "shrestha",
       "email": "jsdghfj@gmail.com",
@@ -593,7 +579,7 @@
     },
     {
       "firstName": "Kapil",
-      "lastName": "Chatkuli",
+      "lastName": "Chhatkuli",
       "email": "kapil9@gmail.com",
       "number": "9856203145",
       "id": 20
@@ -605,6 +591,21 @@
       "phone": "",
       "number": "9860000000",
       "id": 21
+    },
+    {
+      "firstName": "Ankit ",
+      "lastName": "Maharjan",
+      "email": "ankitey@gmail.com",
+      "phone": "",
+      "number": "9630000000",
+      "id": 22
+    },
+    {
+      "firstName": "Bishal",
+      "lastName": "Thapa",
+      "email": "bishal9@yahoo.com",
+      "phone": "93000000020",
+      "id": 23
     }
   ]
 }

@@ -89,7 +89,7 @@ export function EditUsers() {
               />
             </div>
             <div className="submit">
-              <button className="button-update">Update</button>
+              <button className="update">Update</button>
               <Link to="/Users">
                 <button className="cancel">Cancel</button>
               </Link>

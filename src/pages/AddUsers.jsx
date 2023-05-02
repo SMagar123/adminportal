@@ -38,10 +38,6 @@ export const AddUsers = () => {
       </div>
       <div className="adduser__form">
         <form onSubmit={handleSubmit}>
-          {/* <div className="form-detail">
-            <label className="id">ID</label>
-            <input type="number" onChange={(e) => handleUserInput(e)} />
-          </div> */}
           <div className="form-detail">
             <label className="firstName">First Name:</label>
             <input
@@ -75,7 +71,7 @@ export const AddUsers = () => {
               type="number"
               placeholder="Add Number"
               onChange={(e) => handleUserInput(e)}
-              name="number"
+              name="phone"
             />
           </div>
           <div className="submit">

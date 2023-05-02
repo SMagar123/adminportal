@@ -1,7 +1,7 @@
 import { RxHamburgerMenu, BsBell, RiAdminFill } from "../assets/icons/Icons";
 import React, { useState } from "react";
 import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
-import { BiDownArrow, BiHomeAlt } from "react-icons/bi";
+import { BiHomeAlt } from "react-icons/bi";
 import { RiProductHuntFill } from "react-icons/ri";
 import { NavLink, Outlet } from "react-router-dom";
 import useToken from "../pages/UseToken/useToken";
@@ -25,7 +25,7 @@ export const SideNav = () => {
       icon: <AiOutlineSetting />,
     },
   ];
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState();
   const toggleButton = () => {
     setShow(!show);
   };
@@ -70,12 +70,11 @@ export const SideNav = () => {
         <div className="dash-display">
           <div className="navbar__header active">
             <div className="ham-icon">
-              <i>
+              <i onClick={toggleButton}>
                 <RxHamburgerMenu />
               </i>
             </div>
             <div className="adminlogo">
-
               <i>
                 <BsBell />
               </i>
