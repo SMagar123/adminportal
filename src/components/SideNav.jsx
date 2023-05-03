@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import {
   AiOutlineUser,
@@ -12,6 +13,14 @@ import {
 } from "../assets/icons/Icons";
 import { NavLink, Outlet, Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+
+import { RxHamburgerMenu, BsBell, RiAdminFill } from "../assets/icons/Icons";
+import React, { useState } from "react";
+import { AiOutlineUser, AiOutlineSetting } from "react-icons/ai";
+import { BiHomeAlt } from "react-icons/bi";
+import { RiProductHuntFill } from "react-icons/ri";
+import { NavLink, Outlet } from "react-router-dom";
+
 import useToken from "../pages/UseToken/useToken";
 import Loginadmin from "../pages/Loginadmin";
 import { ToastContainer, toast } from "react-toastify";
@@ -34,6 +43,30 @@ const navList = [
   },
 ];
 export const SideNav = () => {
+
+
+  const navList = [
+    {
+      nav: "Users",
+      path: "/Users",
+      icon: <AiOutlineUser />,
+    },
+    {
+      nav: "Product",
+      path: "/Product",
+      icon: <RiProductHuntFill />,
+    },
+    {
+      nav: "Settings",
+      path: "/Settings",
+      icon: <AiOutlineSetting />,
+    },
+  ];
+  const [show, setShow] = useState();
+  const toggleButton = () => {
+    setShow(!show);
+  };
+
   const { token, setToken } = useToken();
   const [displayNav, setDisplayNav] = useState(true);
   const [displayModel, setDisplayModel] = useState(true);
@@ -61,6 +94,7 @@ export const SideNav = () => {
     // navigate("/");
     notifySuccess();
   }
+
   const handleUserModel = () => {
     setDisplayModel(!displayModel);
   };
@@ -75,17 +109,30 @@ export const SideNav = () => {
             displayNav ? "active-sidenav" : "inactive-sidenav"
           }
             `}
-        >
+          >
+            <div className="logo">
+              {/* <img src="" alt="logo" /> */}
+              <h2>Admin Portal</h2>
+              <input
+                type="text"
+                className="nav-filter"
+                placeholder="Filter Menu"
+              />
+
+  return (
+    <>
+      <div className="navbar">
+        {/* <div className="sidenav"></div> */}
+        <div className="navbar__sidebar">
           <div className="logo">
             {/* <img src="" alt="logo" /> */}
             <h2>Admin Portal</h2>
-            <input
+            {/* <input
               type="text"
               className="nav-filter"
               placeholder="Filter Menu"
-            />
+            /> */}
           </div>
-
           <ul>
             <li>
               <NavLink to="/">
@@ -106,16 +153,37 @@ export const SideNav = () => {
         {/* .....top-navbar...... */}
         <div className="dash-display">
           <div className="navbar__header active">
-            <div
-              className="ham-icon"
-              onClick={() => setDisplayNav(!displayNav)}
-            ></div>
-
-            <div className="admin-panel">
-              <i>
+            <div className="ham-icon">
+              <i onClick={toggleButton}>
                 <RxHamburgerMenu />
               </i>
+
             </div>
+
+            <ul>
+              <li>
+                <NavLink to="/">
+                  <BiHomeAlt /> Dashboard
+                </NavLink>
+              </li>
+              {navList.map((item) => {
+                return (
+                  <li key={item.nav}>
+                    <NavLink to={item.nav} key={item.nav}>
+                      {item.icon} {item.nav}
+                    </NavLink>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+          {/* .....top-navbar...... */}
+          <div className="dash-display">
+            <div className="navbar__header active">
+              <div
+                className="ham-icon"
+                onClick={() => setDisplayNav(!displayNav)}
+              >
             <div className="adminlogo">
               <i>
                 <BsBell />

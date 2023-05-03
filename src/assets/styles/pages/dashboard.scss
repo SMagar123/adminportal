@@ -1,6 +1,5 @@
 .dashboard {
-
-  border: 1px solid red;
+  // border: 1px solid red;
   // grid-template-columns: repeat(auto-fit, minmax(150px, auto));
   .dashboard__charts {
     display: grid;
@@ -172,7 +171,7 @@
 @media (max-width: 767px) {
   .dashboard {
     max-width: 767px;
-    border: 1px solid black;
+    // border: 1px solid black;
   }
   .dashboard__list {
     display: none;
@@ -267,7 +266,6 @@
     }
     .dashboard__body {
       padding: 30px;
-      border: 1px solid black;
     }
     .dashboard__charts {
       // grid-template-columns: 1fr;
@@ -276,25 +274,14 @@
       //   "barchart";
       height: max-content;
       justify-content: center;
-      border: 1px solid black;
       .dashboard__charts-linechart {
         width: 850px;
         height: 500px;
         .lineChart {
           width: 800px;
           height: 500px;
-        }
-        .recharts-wrapper {
-          .recharts-surface {
-            // width: 850px;
-            // height: 950px;
-          }
-        }
-        //  width: 100%;
-        border: 1px solid black;
-      }
-      .dashboard__charts-barchart {
-      }
+        }        
+      }      
     }
   }
 }

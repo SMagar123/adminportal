@@ -1,0 +1,60 @@
+.edituser__wrapper{
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0 0.15rem 1.75rem rgb(33,40,50,0.15) ;
+    width: 450px;
+    height: max-content;
+    margin: auto;
+    background-color: azure;
+
+    h2{
+        background-color: $primary-color1;
+        padding: 10px;
+    }
+    .edit-form-detail{
+        padding: 12px;
+        .edit-detail{
+            padding: 10px;
+            label{
+                display: flex;
+                align-items: left;
+                font-size: $font-size;
+                color: $body-text-color;
+            }
+            input{
+                width: 100%;
+                border-radius: 4px;
+                padding: 10px;
+                
+            }
+        }
+    }
+    .submit{            
+        display: flex;
+        justify-content: space-evenly;
+        .update{
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+            transition: $transition-speed ease-out; 
+            font-size: $font-size;
+            &:hover{
+                background-color: green;
+                text-shadow: 0 0 2px;
+            }           
+        }
+        .cancel{
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+            transition: $transition-speed ease-out; 
+            font-size: $font-size;
+            &:hover{
+                background-color: rgb(248, 115, 115);
+                text-shadow: 0 0 2px;
+
+            }
+        }
+    }
+   
+}
