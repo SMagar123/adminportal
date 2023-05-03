@@ -1,4 +1,6 @@
 import { SideNav } from "./SideNav";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { AddProduct } from "./AddProduct";
-export { SideNav, ProtectedRoute, AddProduct };
+// import { EditProduct } from "./EditProduct";
+import { EditProduct } from "./EditProduct";
+export { SideNav, ProtectedRoute, AddProduct, EditProduct };

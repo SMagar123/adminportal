@@ -1,0 +1,181 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "iPhone Xr",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": "4.5",
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/2/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/2/1.jpg",
+        "https://i.dummyjson.com/data/products/2/2.jpg",
+        "https://i.dummyjson.com/data/products/2/3.jpg",
+        "https://i.dummyjson.com/data/products/2/thumbnail.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Huawei P30 ",
+      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      "price": "455",
+      "discountPercentage": 10.58,
+      "rating": 4.09,
+      "stock": 32,
+      "brand": "Huawei",
+      "category": "smartphones",
+      "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/5/1.jpg",
+        "https://i.dummyjson.com/data/products/5/2.jpg",
+        "https://i.dummyjson.com/data/products/5/3.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "MacBook Pro 2023",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      "images": [
+        "https://i.dummyjson.com/data/products/6/1.png",
+        "https://i.dummyjson.com/data/products/6/2.jpg",
+        "https://i.dummyjson.com/data/products/6/3.png",
+        "https://i.dummyjson.com/data/products/6/4.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Microsoft Surface Laptop 4",
+      "description": "Style and speed. Stand out on HD video calls backed by Studio Mics. Capture ideas on the vibrant touchscreen.",
+      "price": 1499,
+      "discountPercentage": 10.23,
+      "rating": 4.43,
+      "stock": 68,
+      "brand": "Microsoft Surface",
+      "category": "laptops",
+      "thumbnail": "https://i.dummyjson.com/data/products/8/thumbnail.jpg",
+      "images": [
+        "https://i.dummyjson.com/data/products/8/1.jpg",
+        "https://i.dummyjson.com/data/products/8/2.jpg",
+        "https://i.dummyjson.com/data/products/8/3.jpg",
+        "https://i.dummyjson.com/data/products/8/4.jpg",
+        "https://i.dummyjson.com/data/products/8/thumbnail.jpg"
+      ]
+    },
+    {
+      "title": "SonyXperia",
+      "description": "designed by sony for professionals",
+      "price": "750",
+      "discountPercentage": "5",
+      "rating": "4.5",
+      "stock": "5",
+      "brand": "sony",
+      "category": "smartphones",
+      "thumbnail": "sony.jpg",
+      "images": [
+        "images/sony.jpg"
+      ],
+      "id": 6
+    },
+    {
+      "title": "Loreal",
+      "description": "loreal for your skin",
+      "price": "25",
+      "discountPercentage": "20",
+      "rating": "4",
+      "stock": "10",
+      "brand": "Loreal",
+      "category": "skincare",
+      "thumbnail": "loreal.jpg",
+      "images": [
+        "images/loreal.jpg"
+      ],
+      "id": 7
+    },
+    {
+      "title": "Oneplus",
+      "description": "keep calm",
+      "price": "650",
+      "discountPercentage": "5",
+      "rating": "4.5",
+      "stock": "3",
+      "brand": "oneplus",
+      "category": "smartphones",
+      "thumbnail": "oneplus.jpg",
+      "images": [
+        "images/oneplus.jpg"
+      ],
+      "id": 8
+    },
+    {
+      "title": "LoveaJoy",
+      "description": "brilliant perfume for women",
+      "price": "55",
+      "discountPercentage": "15",
+      "rating": "5",
+      "stock": "20",
+      "brand": "love a joy",
+      "category": "fragrances",
+      "thumbnail": "loveajoy.jpg",
+      "images": [
+        "images/loveajoy.jpg"
+      ],
+      "id": 9
+    },
+    {
+      "title": "Macbook",
+      "description": "It is the fastest machine in world",
+      "price": "1000",
+      "discountPercentage": "15",
+      "rating": "4.5",
+      "stock": "20",
+      "brand": "apple",
+      "category": "laptops",
+      "thumbnail": "macbook.jpg",
+      "images": [
+        "images/macbook.jpg"
+      ],
+      "id": 10
+    },
+    {
+      "title": "Macbook air",
+      "description": "It is the fastest machine in world",
+      "price": "1000",
+      "discountPercentage": "10",
+      "rating": "4.5",
+      "stock": "20",
+      "brand": "apple",
+      "category": "laptops",
+      "thumbnail": "macpro.jpg",
+      "images": [
+        "images/macpro.jpg"
+      ],
+      "id": 11
+    },
+    {
+      "title": "Amber",
+      "description": "It is a classic perfume",
+      "price": "30",
+      "discountPercentage": "10",
+      "rating": "4",
+      "stock": "20",
+      "brand": "amber",
+      "category": "fragrances",
+      "thumbnail": "amber.jpg",
+      "images": [
+        "images/amber.jpg"
+      ],
+      "id": 12
+    }
+  ]
+}

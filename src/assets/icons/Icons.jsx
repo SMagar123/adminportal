@@ -6,7 +6,7 @@ import {
   BiDownArrow,
 } from "react-icons/bi";
 import { RiAdminFill, RiProductHuntFill } from "react-icons/ri";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import { BsThreeDotsVertical, BsBell } from "react-icons/bs";
 import {
   AiOutlineDelete,
@@ -17,6 +17,10 @@ import {
   AiOutlineSetting,
   AiOutlinePlus,
   AiFillStar,
+  AiFillForward,
+  AiFillBackward,
+  AiOutlineArrowRight,
+  AiOutlineArrowLeft,
 } from "react-icons/ai";
 
 export {
@@ -38,4 +42,9 @@ export {
   AiOutlineEyeInvisible,
   AiOutlinePlus,
   AiFillStar,
+  RxCross1,
+  AiFillForward,
+  AiFillBackward,
+  AiOutlineArrowRight,
+  AiOutlineArrowLeft,
 };

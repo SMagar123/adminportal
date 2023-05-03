@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addProductList } from "../service/api";
+import { ToastContainer, toast } from "react-toastify";
 const initialProuct = {
   title: "",
   description: "",
@@ -11,7 +12,7 @@ const initialProuct = {
   brand: "",
   category: "",
   thumbnail: "",
-  images: "",
+  images: [],
 };
 const formField = [
   "Title",
@@ -23,16 +24,51 @@ const formField = [
   "Category",
 ];
 export const AddProduct = () => {
-  const [addedProduct, setAddedProduct] = useState(initialProuct);
   const navigate = useNavigate();
-
+  const [addedProduct, setAddedProduct] = useState(initialProuct);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedThumbnail, setSelectedThumbnail] = useState(null);
   const handleAddingProduct = (e) => {
     setAddedProduct({ ...addedProduct, [e.target.name]: e.target.value });
   };
-  const addProduct = async () => {
-    await addProductList(addedProduct);
+  const handleAddingThumbnail = (e) => {
+    if (e.target.files.length !== 0) {
+      setSelectedThumbnail(e.target.files[0]);
+      addedProduct.thumbnail = e.target.files[0].name;
+    }
+  };
+  const handleAddingImage = (e) => {
+    if (e.target.files.length !== 0) {
+      setSelectedImage(e.target.files[0]);
+      addedProduct.images.push(`images/${e.target.files[0].name}`);
+    }
+  };
+  const cancelImageUpdate = () => {
+    setSelectedImage(null);
+    addedProduct.images.pop();
+  };
+  const cancelThumbnailUpdate = () => {
+    setSelectedThumbnail(null);
+    addedProduct.thumbnail = "";
+  };
+  const addProduct = () => {
+    addProductList(addedProduct);
+    notify();
     navigate("/Product");
   };
+  const notify = () => {
+    toast.success("Product added successfully", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
   console.log(addedProduct);
   return (
     <div className="addproduct">
@@ -48,6 +84,7 @@ export const AddProduct = () => {
                   onChange={(e) => handleAddingProduct(e)}
                   placeholder={`Enter ${item} `}
                   name={`${item.toLowerCase()}`}
+                  required
                 />
               </div>
             );
@@ -59,6 +96,7 @@ export const AddProduct = () => {
               onChange={(e) => handleAddingProduct(e)}
               placeholder="Enter discount %"
               name="discountPercentage"
+              required
             />
           </div>
           <div className="form-image">
@@ -66,24 +104,67 @@ export const AddProduct = () => {
             <input
               type="file"
               name="thumbnail"
-              accept="image/png, image/jpeg"
+              accept="image/*"
               className="thumbnail"
-              onChange={(e) => handleAddingProduct(e)}
+              onChange={(e) => handleAddingThumbnail(e)}
+              required
             />
+            {selectedThumbnail && (
+              <div className="preview-image">
+                <img
+                  alt="not found"
+                  src={URL.createObjectURL(selectedThumbnail)}
+                />
+                <button onClick={cancelThumbnailUpdate}>Change</button>
+              </div>
+            )}
             <label htmlFor="image">Image</label>
             <input
               type="file"
               name="images"
-              accept="image/png, image/jpeg"
+              accept="image/*"
               className="mainimage"
-              onChange={(e) => handleAddingProduct(e)}
+              onChange={(e) => handleAddingImage(e)}
+              required
             />
           </div>
+          {selectedImage && (
+            <div className="preview-image">
+              <img alt="not found" src={URL.createObjectURL(selectedImage)} />
+              <button onClick={cancelImageUpdate}>Change</button>
+            </div>
+          )}
           <div className="form-submit">
             <button type="submit">Add Product</button>
           </div>
         </form>
       </div>
+      <ToastContainer />
+      {/* <h1>Upload and Display Image usign React Hook's</h1>
+
+      {selectedImage && (
+        <div>
+          <img
+            alt="not found"
+            width={"250px"}
+            src={URL.createObjectURL(selectedImage)}
+          />
+          <br />
+          <button onClick={() => setSelectedImage(null)}>Remove</button>
+        </div>
+      )}
+
+      <br />
+      <br />
+
+      <input
+        type="file"
+        name="myImage"
+        onChange={(event) => {
+          console.log(event.target.files[0]);
+          setSelectedImage(event.target.files[0]);
+        }}
+      /> */}
     </div>
   );
 };
