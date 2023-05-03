@@ -4,9 +4,7 @@
   height: 100vh;
   padding: 10px $general-padding;
   display: grid;
-
   grid-template-columns: repeat(auto-fit, 20% 80%);
-
   grid-gap: $general-gap;
 }
 .display-certain {
@@ -246,4 +244,39 @@
 }
 .display-model {
   display: none;
+}
+
+//Responsive design
+
+//at 991px
+@media (max-width: 991px) {
+  .dash-display {
+    max-width: 991px;
+    .navbar__header {
+      width: 935px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .display-certain {
+    max-width: 767px;
+  }
+  .dash-display {
+    max-width: 767px;
+    .navbar__header {
+      max-width: 767px;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .display-certain {
+    max-width: 450px;
+  }
+  .dash-display {
+    max-width: 450px;
+    .navbar__header {
+      max-width: 450px;
+    }
+  }
 }

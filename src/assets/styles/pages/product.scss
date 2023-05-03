@@ -108,3 +108,30 @@
     }
   }
 }
+
+//responsive
+
+@media screen and (max-width: 767px) {
+  .product {
+    width: 767px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .product {
+    width: 450px;
+    .product__search {
+      gap: $general-gap;
+      .search-field {
+        input {
+          font-size: 20px;
+        }
+      }
+      .filter-field {
+        search {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
