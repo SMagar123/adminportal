@@ -1,3 +1,6 @@
 import { SideNav } from "./SideNav";
 import { ProtectedRoute } from "./ProtectedRoute";
-export { SideNav, ProtectedRoute };
+import { Button } from "./Button";
+import {Input} from "./Input";
+
+export { SideNav, ProtectedRoute, Button,Input};

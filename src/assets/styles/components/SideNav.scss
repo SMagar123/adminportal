@@ -7,6 +7,7 @@
   grid-template-columns: repeat(auto-fit, 20% 80%);
   // grid-template-rows: ;
   grid-gap: $general-gap;
+  margin: auto;
   .navbar__sidebar {
     background-color: $primary-color1;
     text-align: left;
@@ -36,6 +37,7 @@
       padding: $general-padding;
       background-color: $menu-item-hover;
       text-align: center;
+      
     }
     i {
       position: relative;
@@ -68,10 +70,7 @@
         a {
           margin: $general-margin;
           color: $text-color;
-          // &.active{
-
-          // }
-        }
+          }
       }
     }
     img {
@@ -161,4 +160,20 @@
       }
     }
   }
+}
+@media (max-width:991px){
+  .navbar{
+    display: flex;
+    .navbar__sidebar{
+     display: none;
+    }
+  }
+//  .dash-display{
+//   display: grid;
+//   border: 1px solid black;
+//   padding: $general-padding;
+//   .navbar__header{
+    
+//   }
+//  }
 }
