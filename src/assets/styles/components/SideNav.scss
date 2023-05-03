@@ -79,9 +79,34 @@
         background-color: $menu-item-hover;
         text-shadow: 0 0 2px $text-color;
       }
+
       a {
         margin: $general-margin;
         color: $text-color;
+
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+      li {
+        font-size: $font-size;
+        font-weight: 400;
+        cursor: pointer;
+        padding: 10px 15px;
+        transition: all $transition-speed ease-out;
+        &:hover {
+          background-color: $menu-item-hover;
+          text-shadow: 0 0 2px $text-color;
+        }       
+        a {
+          margin: $general-margin;
+          color: $text-color;
+          // &.active{
+
+          // }
+        }
+
       }
     }
   }
@@ -121,6 +146,7 @@
   .adminlogo {
     display: flex;
     justify-content: space-between;
+
     align-items: flex-start;
     padding: 2px;
     i {
@@ -130,6 +156,15 @@
       height: 35px;
       width: 35px;
       border: 1px solid $primary-color1;
+
+    padding: $general-padding;
+    gap: $general-gap;
+    // border: 1px solid blue;
+    margin-bottom: $general-padding;
+    flex-wrap: wrap;
+
+    .ham-icon {
+
       text-align: center;
       padding: 4px;
     }

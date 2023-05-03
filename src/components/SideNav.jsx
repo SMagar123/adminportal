@@ -86,6 +86,7 @@ export const SideNav = () => {
                 placeholder="Filter Menu"
               />
             </div>
+
             <ul>
               <li>
                 <NavLink to="/">
@@ -110,9 +111,19 @@ export const SideNav = () => {
                 className="ham-icon"
                 onClick={() => setDisplayNav(!displayNav)}
               >
+            <div className="adminlogo">
+
+              <i>
+                <BsBell />
+              </i>
+              <span>1</span>
+
+              <div className="admin-panel">
+
                 <i>
                   <RxHamburgerMenu />
                 </i>
+
               </div>
               <div className="adminlogo">
                 <i>
@@ -153,6 +164,12 @@ export const SideNav = () => {
                   </i>
                   <h5>Swift-admin</h5>
                   <p>swiftadmin@gmail.com</p>
+
+                <div className="admin-name">
+                  <h4>Admin</h4>
+
+
+
                 </div>
               </div>
             </div>
@@ -161,7 +178,14 @@ export const SideNav = () => {
 
           <ToastContainer />
         </div>
+
       </>
     );
   }
+
+
+      </div>
+    </>
+  );
+
 };
