@@ -1,10 +1,16 @@
-button{
-    padding: 6px;
-    border-radius: 4px;
-    border: 1px solid $primary-color2;
-    background-color: $primary-color1;
-    cursor: pointer;
-    font-size: $font-size;
-    width: 150px;
+.buttonComponent{
+    button{
+        padding: 6px;
+        border-radius: 4px;
+        border: 1px solid $primary-color2;
+        background-color: $primary-color1;
+        cursor: pointer;
+        transition: $transition-speed ease-out; 
+        font-size: 18px;
+        &:hover{
+            text-shadow: 0 0 2px;
+        }  
+    }
   
+     
 }

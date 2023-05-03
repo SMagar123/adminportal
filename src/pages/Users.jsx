@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { BiEdit, BiFilter, BiUserPlus } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
+import {Input} from "../components/"
 const tableHead = [
   "ID",
   "FirstName",
@@ -26,7 +27,7 @@ export const Users = () => {
 
   /*....for pagination...... */
   const [currentPage, setCurrentPage] = useState(1);
-  const todoPerPage = 6;
+  const todoPerPage = 5;
   // const [todoPerPage, setTodoPerPage] = useState(6);
   const numOfTotalPages = Math.ceil(userList.length / todoPerPage);
   const pages = [...Array(numOfTotalPages+1).keys()].slice(1);
@@ -117,7 +118,7 @@ export const Users = () => {
       {/* ........ search user..........*/}
       <div className="header-search">
         <div className="search__filter">
-          <div className="search__filter-detail">
+          <div className="search__filter-detail">  
             <input
               type="text"
               onChange={handleSearch}

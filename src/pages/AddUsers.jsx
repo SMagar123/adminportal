@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button, Input } from "../components";
 export const AddUsers = () => {
   const userData = {
     firstName: "",
@@ -40,44 +41,27 @@ export const AddUsers = () => {
         <form onSubmit={handleSubmit}>
           <div className="form-detail">
             <label className="firstName">First Name:</label>
-            <input
-              type="name"
-              placeholder="Add First Name"
-              onChange={(e) => handleUserInput(e)}
-              name="firstName"
-            />
+            <Input type={"text"} placeholder="Add First Name" onChange={(e) => handleUserInput(e)} name="firstName"/>          
           </div>
           <div className="form-detail">
             <label className="lastName">Last Name:</label>
-            <input
-              type="name"
-              placeholder="Add Last Name"
-              onChange={(e) => handleUserInput(e)}
-              name="lastName"
-            />
+            <Input type={"text"} placeholder="Add Last Name" onChange={(e) => handleUserInput(e)} name="lastName"/>
+            
           </div>
           <div className="form-detail">
             <label className="email">Email</label>
-            <input
-              type="email"
-              placeholder="Add Email"
-              onChange={(e) => handleUserInput(e)}
-              name="email"
-            />
+            <Input type={"email"} placeholder="Add Email" onChange={(e) => handleUserInput(e)} name="email"/>
+           
           </div>
           <div className="form-detail">
             <label className="phone">Phone Num</label>
-            <input
-              type="number"
-              placeholder="Add Number"
-              onChange={(e) => handleUserInput(e)}
-              name="phone"
-            />
+            <Input type={"number"} placeholder="Add Number" onChange={(e) => handleUserInput(e)} name="phone"/>
+           
           </div>
           <div className="submit">
-            <button className="add">Add Users</button>
+            <Button className="add" name={"Add Users"}/>
             <Link to="/Users">
-              <button className="cancel">Cancel</button>
+            <Button className={"cancel"} name={"Cancel"}/>
             </Link>
           </div>
         </form>

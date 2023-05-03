@@ -86,8 +86,6 @@ export const SideNav = () => {
                 </i>
                 <div className="admin-name">
                   <h4>Admin</h4>
-
-
                 </div>
               </div>
             </div>

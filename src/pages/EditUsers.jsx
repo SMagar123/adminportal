@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button } from "../components";
 
 export function EditUsers() {
   const { id } = useParams(); /* get id from route*/
@@ -89,9 +90,9 @@ export function EditUsers() {
               />
             </div>
             <div className="submit">
-              <button className="update">Update</button>
+              <Button className={"update"} name={"Update"}/>
               <Link to="/Users">
-                <button className="cancel">Cancel</button>
+                <Button className={"cancel"} name={"Cancel"}/>
               </Link>
             </div>
           </form>
