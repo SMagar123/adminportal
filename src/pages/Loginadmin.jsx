@@ -1,7 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "../assets/icons/Icons";
-import { useNavigate, Navigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 async function loginUser(credentials) {
   return fetch("http://localhost:8080/Login", {
     method: "POST",
@@ -12,7 +13,7 @@ async function loginUser(credentials) {
   }).then((data) => data.json());
 }
 
-const Loginadmin = ({ setToken }) => {
+const Loginadmin = ({ setToken, display }) => {
   const [iconstate, setIconState] = useState(true);
   const [icond, setIcond] = useState(<AiOutlineEyeInvisible />);
   const [inputType, setInputType] = useState("password");
@@ -31,6 +32,19 @@ const Loginadmin = ({ setToken }) => {
       setInputType("password");
     }
   };
+  const notifyError = () => {
+    toast.error("OOPPSS!!! Wrong credentials", {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (username === "swift-admin" && password === "admin123") {
@@ -40,13 +54,14 @@ const Loginadmin = ({ setToken }) => {
       });
       setToken(token);
     } else {
-      alert("wrong username and password");
-      Navigate("/dashboard");
+      notifyError();
+      // Navigate("/");
     }
   };
 
   return (
     <div className="login">
+      <ToastContainer />
       <div className="login__form">
         <h3>Admin Login</h3>
         <form onSubmit={handleSubmit} autoComplete="off">

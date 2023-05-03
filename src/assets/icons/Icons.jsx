@@ -1,6 +1,18 @@
+
+import {
+  BiSearch,
+  BiUserPlus,
+  BiEdit,
+  BiHomeAlt,
+  BiDownArrow,
+} from "react-icons/bi";
+import { RiAdminFill, RiProductHuntFill } from "react-icons/ri";
+import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
+
 import { BiSearch, BiUserPlus, BiEdit,BiHomeAlt,BiDownArrow, BiFilterAlt} from "react-icons/bi";
 import { RiAdminFill, RiProductHuntFill} from "react-icons/ri";
 import { RxHamburgerMenu } from "react-icons/rx";
+
 import { BsThreeDotsVertical, BsBell } from "react-icons/bs";
 import {
   AiOutlineDelete,
@@ -9,6 +21,12 @@ import {
   AiOutlineEye,
   AiOutlineEyeInvisible,
   AiOutlineSetting,
+  AiOutlinePlus,
+  AiFillStar,
+  AiFillForward,
+  AiFillBackward,
+  AiOutlineArrowRight,
+  AiOutlineArrowLeft,
 } from "react-icons/ai";
 
 export {
@@ -29,4 +47,11 @@ export {
   AiOutlineUserDelete,
   AiOutlineEye,
   AiOutlineEyeInvisible,
+  AiOutlinePlus,
+  AiFillStar,
+  RxCross1,
+  AiFillForward,
+  AiFillBackward,
+  AiOutlineArrowRight,
+  AiOutlineArrowLeft,
 };
