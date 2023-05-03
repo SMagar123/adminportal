@@ -6,11 +6,11 @@ import {
 } from "react-router-dom";
 import "./App.scss";
 
-import { Dashboard, Loginadmin, Users, Product, Settings } from "./pages";
+// import { Dashboard, Loginadmin, Users, Product, Settings } from "./pages";
 import { AddProduct, EditProduct, SideNav } from "./components";
 
 import { Dashboard, Users, AddUsers,EditUsers, Product, Settings } from "./pages";
-import { SideNav } from "./components";
+// import { SideNav } from "./components";
 
 function App() {
   const router = createBrowserRouter(

@@ -19,23 +19,6 @@
       ]
     },
     {
-      "id": 2,
-      "title": "Huawei P30 ",
-      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
-      "price": "455",
-      "discountPercentage": 10.58,
-      "rating": 4.09,
-      "stock": 32,
-      "brand": "Huawei",
-      "category": "smartphones",
-      "thumbnail": "https://i.dummyjson.com/data/products/5/thumbnail.jpg",
-      "images": [
-        "https://i.dummyjson.com/data/products/5/1.jpg",
-        "https://i.dummyjson.com/data/products/5/2.jpg",
-        "https://i.dummyjson.com/data/products/5/3.jpg"
-      ]
-    },
-    {
       "id": 3,
       "title": "MacBook Pro 2023",
       "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
@@ -176,6 +159,21 @@
         "images/amber.jpg"
       ],
       "id": 12
+    },
+    {
+      "title": "Smriti Skin",
+      "description": "white skin from Himalayas girll",
+      "price": "12000",
+      "discountPercentage": "0",
+      "rating": "5",
+      "stock": "1",
+      "brand": "smriti",
+      "category": "skincare",
+      "thumbnail": "mi11ultra.jpg",
+      "images": [
+        "images/mi11ultra.jpg"
+      ],
+      "id": 13
     }
   ]
 }

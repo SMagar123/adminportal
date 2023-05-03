@@ -28,22 +28,13 @@ export const Users = () => {
   /*....for pagination...... */
   const [currentPage, setCurrentPage] = useState(1);
   const todoPerPage = 5;
+  const indexofLastTodo = currentPage * todoPerPage;
+  const indexofFirstTodo = indexofLastTodo - todoPerPage;
+  const visibleTodo = userFiltered.slice(indexofFirstTodo, indexofLastTodo);
   // const [todoPerPage, setTodoPerPage] = useState(6);
   const numOfTotalPages = Math.ceil(userList.length / todoPerPage);
   const pages = [...Array(numOfTotalPages + 1).keys()].slice();
-  const indexofLastTodo = currentPage + todoPerPage;
-  const indexofFirstTodo = indexofLastTodo - todoPerPage;
-  const visibleTodo = userFiltered.slice(indexofFirstTodo, indexofLastTodo);
   console.log("visibleToDo", visibleTodo);
-
-  // useEffect(() => {
-  //   console.log("list", userList);
-  //   let indexofFirstTodo = currentPage - 1 * todoPerPage;
-  //   let indexofLastTodo = currentPage * todoPerPage - 1;
-  //   const visibleTodo = userList.slice(indexofFirstTodo, indexofLastTodo);
-  //   console.log("visible", visibleTodo);
-  //   setUserFiltered(visibleTodo);
-  // }, [currentPage]);
 
   const prevPageHandler = () => {
     if (currentPage !== 1) {
@@ -159,7 +150,7 @@ export const Users = () => {
               return <h4>{item}</h4>;
             })}
           </div>
-          {userFiltered.map((d, item) => {
+          {visibleTodo.map((d, item) => {
             return (
               <div className="table-item" key={d.id}>
                 <div className="id">
