@@ -18,7 +18,7 @@ function App() {
         <Route path="Product" element={<Product />} />
         <Route path="addproduct" element={<AddProduct />} />
         <Route path="/edit/:id" element={<EditProduct />} />
-        {/* <Route path="Settings" element={<Settings />} /> */}
+        <Route path="Settings" element={<Settings />} />
       </Route>
     )
   );

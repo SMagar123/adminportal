@@ -84,20 +84,3 @@
 //     }
 //   }
 // }
-@media screen and (max-width: 450px) {
-  .singleProduct {
-    .individual-product {
-      // width: 175px;
-      width: 100%;
-      height: 285px;
-      .image {
-        height: 150px;
-      }
-      .product-edit {
-        flex-direction: column;
-        gap: 8px;
-      }
-      
-    }
-  }
-}
