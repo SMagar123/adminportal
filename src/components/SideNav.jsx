@@ -69,107 +69,95 @@ export const SideNav = () => {
   } else {
     // notifySuccess();
     return (
-      <>
-        <div className={` ${displayNav ? "navbar" : "display-certain"}`}>
-          <div
-            className={`navbar__sidebar ${
-              displayNav ? "active-sidenav" : "inactive-sidenav"
-            }
+      <div className={` ${displayNav ? "navbar" : "display-certain"}`}>
+        <div
+          className={`navbar__sidebar ${
+            displayNav ? "active-sidenav" : "inactive-sidenav"
+          }
             `}
-          >
-            <div className="logo">
-              {/* <img src="" alt="logo" /> */}
-              <h2>Admin Portal</h2>
-              <input
-                type="text"
-                className="nav-filter"
-                placeholder="Filter Menu"
-              />
-            </div>
-
-            <ul>
-              <li>
-                <NavLink to="/">
-                  <BiHomeAlt /> Dashboard
-                </NavLink>
-              </li>
-              {navList.map((item) => {
-                return (
-                  <li key={item.nav}>
-                    <NavLink to={item.nav} key={item.nav}>
-                      {item.icon} {item.nav}
-                    </NavLink>
-                  </li>
-                );
-              })}
-            </ul>
+        >
+          <div className="logo">
+            {/* <img src="" alt="logo" /> */}
+            <h2>Admin Portal</h2>
+            <input
+              type="text"
+              className="nav-filter"
+              placeholder="Filter Menu"
+            />
           </div>
-          {/* .....top-navbar...... */}
-          <div className="dash-display">
-            <div className="navbar__header active">
-              <div
-                className="ham-icon"
-                onClick={() => setDisplayNav(!displayNav)}
-              >
-            <div className="adminlogo">
 
+          <ul>
+            <li>
+              <NavLink to="/">
+                <BiHomeAlt /> Dashboard
+              </NavLink>
+            </li>
+            {navList.map((item) => {
+              return (
+                <li key={item.nav}>
+                  <NavLink to={item.nav} key={item.nav}>
+                    {item.icon} {item.nav}
+                  </NavLink>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        {/* .....top-navbar...... */}
+        <div className="dash-display">
+          <div className="navbar__header active">
+            <div
+              className="ham-icon"
+              onClick={() => setDisplayNav(!displayNav)}
+            ></div>
+
+            <div className="admin-panel">
+              <i>
+                <RxHamburgerMenu />
+              </i>
+            </div>
+            <div className="adminlogo">
               <i>
                 <BsBell />
               </i>
               <span>1</span>
-
               <div className="admin-panel">
-
                 <i>
-                  <RxHamburgerMenu />
+                  <RiAdminFill />
                 </i>
-
-              </div>
-              <div className="adminlogo">
-                <i>
-                  <BsBell />
-                </i>
-                <span>1</span>
-                <div className="admin-panel">
-                  <i>
-                    <RiAdminFill />
-                  </i>
-                  <div className="admin-name">
-                    <p>Admin</p>
-                  </div>
-                  <div className="admin-functionalities">
-                    <Link>
-                      <button onClick={handleUserModel}>Profile</button>
-                    </Link>
-                    <Link>
-                      <button onClick={handleLogout}>Logout</button>
-                    </Link>
-                  </div>
+                <div className="admin-name">
+                  <p>Admin</p>
+                </div>
+                <div className="admin-functionalities">
+                  <Link>
+                    <button onClick={handleUserModel}>Profile</button>
+                  </Link>
+                  <Link>
+                    <button onClick={handleLogout}>Logout</button>
+                  </Link>
                 </div>
               </div>
-              <div
-                className={`${
-                  displayModel ? "display-model" : "adminprofile-model"
-                }`}
-              >
-                <div className="model-canel">
-                  <i onClick={handleUserModel}>
-                    <RxCross1 />
-                  </i>
-                </div>
+            </div>
+            <div
+              className={`${
+                displayModel ? "display-model" : "adminprofile-model"
+              }`}
+            >
+              <div className="model-canel">
+                <i onClick={handleUserModel}>
+                  <RxCross1 />
+                </i>
+              </div>
 
-                <div className="admin-profile">
-                  <i>
-                    <AiOutlineUser />
-                  </i>
-                  <h5>Swift-admin</h5>
-                  <p>swiftadmin@gmail.com</p>
+              <div className="admin-profile">
+                <i>
+                  <AiOutlineUser />
+                </i>
+                <h5>Swift-admin</h5>
+                <p>swiftadmin@gmail.com</p>
 
                 <div className="admin-name">
                   <h4>Admin</h4>
-
-
-
                 </div>
               </div>
             </div>
@@ -178,14 +166,7 @@ export const SideNav = () => {
 
           <ToastContainer />
         </div>
-
-      </>
+      </div>
     );
   }
-
-
-      </div>
-    </>
-  );
-
 };
