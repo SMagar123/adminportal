@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { BiEdit, BiFilter, BiUserPlus } from "react-icons/bi";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import { Link, useNavigate } from "react-router-dom";
-import {Input} from "../components/"
+import { Input } from "../components/";
 const tableHead = [
   "ID",
   "FirstName",
@@ -30,11 +30,11 @@ export const Users = () => {
   const todoPerPage = 5;
   // const [todoPerPage, setTodoPerPage] = useState(6);
   const numOfTotalPages = Math.ceil(userList.length / todoPerPage);
-  const pages = [...Array(numOfTotalPages+1).keys()].slice(1);
+  const pages = [...Array(numOfTotalPages + 1).keys()].slice();
   const indexofLastTodo = currentPage + todoPerPage;
   const indexofFirstTodo = indexofLastTodo - todoPerPage;
   const visibleTodo = userFiltered.slice(indexofFirstTodo, indexofLastTodo);
-  console.log("visibleToDo",userFiltered)
+  console.log("visibleToDo", visibleTodo);
 
   // useEffect(() => {
   //   console.log("list", userList);
@@ -118,7 +118,7 @@ export const Users = () => {
       {/* ........ search user..........*/}
       <div className="header-search">
         <div className="search__filter">
-          <div className="search__filter-detail">  
+          <div className="search__filter-detail">
             <input
               type="text"
               onChange={handleSearch}
@@ -158,10 +158,10 @@ export const Users = () => {
             {tableHead.map((item) => {
               return <h4>{item}</h4>;
             })}
-          </div>   
-          {visibleTodo.map((d, item) => {
+          </div>
+          {userFiltered.map((d, item) => {
             return (
-              <div className="table-item" key={d.id}>              
+              <div className="table-item" key={d.id}>
                 <div className="id">
                   <p>{d.id}</p>
                 </div>
@@ -182,12 +182,15 @@ export const Users = () => {
                     <Link to={`/EditUsers/${d.id}`} className="action-edit">
                       <BiEdit />
                     </Link>
-                    <span onClick={(e) => handleDelete(d.id)} className="action-delete">
+                    <span
+                      onClick={(e) => handleDelete(d.id)}
+                      className="action-delete"
+                    >
                       <RiDeleteBin5Line />
                     </span>
                   </div>
                 </div>
-                </div>              
+              </div>
             );
           })}
         </div>
