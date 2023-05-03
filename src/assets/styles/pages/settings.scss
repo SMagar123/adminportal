@@ -1,0 +1,19 @@
+.setting__wrapper{
+    border: 1px solid black;
+    padding: $general-padding;
+    margin:10px;    
+    .wrapper-layout{
+        display: grid;
+        h3{
+            margin-bottom: 2px;
+            font-size: 24px;
+        }
+        .wrapper-layout-choose{
+            display: flex;
+            gap: $general-gap;
+            button{
+                
+            }
+        }
+    }
+}

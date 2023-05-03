@@ -8,6 +8,7 @@
   grid-template-columns: repeat(auto-fit, 20% 80%);
 
   grid-gap: $general-gap;
+
 }
 .display-certain {
   width: 967px;
@@ -22,6 +23,26 @@
 .navbar__sidebar {
   background-color: $primary-color1;
   text-align: left;
+
+  margin: auto;
+  .navbar__sidebar {
+    background-color: $primary-color1;
+    text-align: left;
+    position: relative;
+    .logo {
+      cursor: pointer;
+      .nav-filter {
+        position: absolute;
+        top: 86px;
+        left: 24px;
+        width: 174px;
+        border-radius: 6px;
+        padding: 5px 0;
+        font-size: 12px;
+        &:not(:focus) {
+          background-color: #003b50;
+        }
+
 
   position: relative;
 
@@ -61,8 +82,13 @@
     &:hover {
       border: 1px solid $primary-color1;
       background-color: $menu-item-hover;
+
       text-shadow: 0 0 2px $text-color;
       color: $text-color;
+
+      text-align: center;
+      
+
     }
   }
   ul {
@@ -102,10 +128,14 @@
         a {
           margin: $general-margin;
           color: $text-color;
+
           // &.active{
 
           // }
         }
+
+
+          }
 
       }
     }
@@ -247,6 +277,7 @@
     }
   }
 }
+
 .adminprofile-model {
   position: absolute;
   top: 0px;
@@ -281,4 +312,21 @@
 }
 .display-model {
   display: none;
+
+@media (max-width:991px){
+  .navbar{
+    display: flex;
+    .navbar__sidebar{
+     display: none;
+    }
+  }
+//  .dash-display{
+//   display: grid;
+//   border: 1px solid black;
+//   padding: $general-padding;
+//   .navbar__header{
+    
+//   }
+//  }
+
 }
